@@ -15,13 +15,30 @@ namespace GSBCR.DAL
         public static TYPE_PRATICIEN FindById(string code)
         {
             //A faire : rechercher un type praticien par son code
-            return null;
+            TYPE_PRATICIEN typ = null;
+            using (var context = new GSB_VisiteEntities())
+            {
+                //context.Configuration.LazyLoadingEnabled = false;
+                var req = from t in context.TYPE_PRATICIEN.Include("LesPraticiens")
+                          where t.TYP_CODE == code
+                          select t;
+                typ = req.SingleOrDefault<TYPE_PRATICIEN>();
+            }
+            return typ;
         }
 
         public static List<TYPE_PRATICIEN> FindAll()
         {
             //A faire : charger tous les types praticiens
-            return null;
+            List<TYPE_PRATICIEN> typs = null;
+            using (var context = new GSB_VisiteEntities())
+            {
+                //context.Configuration.LazyLoadingEnabled = false;
+                var req = from t in context.TYPE_PRATICIEN.Include("LesPraticiens")
+                          select t;
+                typs = req.ToList<TYPE_PRATICIEN>();
+            }
+            return typs;
         }
 
     }

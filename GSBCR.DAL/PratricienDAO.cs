@@ -17,40 +17,42 @@ namespace GSBCR.DAL
             PRATICIEN pa = null;
             using (var context = new GSB_VisiteEntities())
             {
-                //désactiver le chargement différé
                 //context.Configuration.LazyLoadingEnabled = false;
                 var req = from p in context.PRATICIEN.Include("LeType")
                           where p.PRA_NUM == pranum
                           select p;
                 pa = req.SingleOrDefault<PRATICIEN>();
-
             }
             return pa;
         }
 
         public static List<PRATICIEN> FindAll()
         {
-
-            List<PRATICIEN> prats = null;
             //A faire : charger tous les praticiens
-           
+            List<PRATICIEN> prats = null;
             using (var context = new GSB_VisiteEntities())
             {
-                //désactiver le chargement différé
                 //context.Configuration.LazyLoadingEnabled = false;
-                var req = from m in context.PRATICIEN.Include("LeType")
-                          select m;
+                var req = from p in context.PRATICIEN.Include("LeType")
+                          select p;
                 prats = req.ToList<PRATICIEN>();
-
             }
-            
             return prats;
         }
 
         public static List<PRATICIEN> FindByType(string code)
         {
             //A faire : charger tous les praticiens d'un type
-            return null;
+            List<PRATICIEN> prats = null;
+            using (var context = new GSB_VisiteEntities())
+            {
+                //context.Configuration.LazyLoadingEnabled = false;
+                var req = from p in context.PRATICIEN.Include("LeType")
+                          where p.TYP_CODE == code
+                          select p;
+                prats = req.ToList<PRATICIEN>();
+            }
+            return prats;
         }
     }
 }

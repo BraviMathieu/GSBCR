@@ -158,7 +158,7 @@ namespace GSBCR.UI
             {
 
                 MessageBox.Show("Abandon traitement : " + ex.GetBaseException().Message, "Erreur base de données", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           } 
                       
             btnValider.Enabled = true;
         }
