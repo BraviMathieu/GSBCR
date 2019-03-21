@@ -1,0 +1,1268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GSBCR.modele.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="FAMILLE">
+          <Key>
+            <PropertyRef Name="FAM_CODE" />
+          </Key>
+          <Property Name="FAM_CODE" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="FAM_LIBELLE" Type="nvarchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="MEDICAMENT">
+          <Key>
+            <PropertyRef Name="MED_DEPOTLEGAL" />
+          </Key>
+          <Property Name="MED_DEPOTLEGAL" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="MED_NOMCOMMERCIAL" Type="nvarchar" MaxLength="25" />
+          <Property Name="FAM_CODE" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="MED_COMPOSITION" Type="nvarchar" MaxLength="255" />
+          <Property Name="MED_EFFETS" Type="nvarchar" MaxLength="255" />
+          <Property Name="MED_CONTREINDIC" Type="nvarchar" MaxLength="255" />
+          <Property Name="MED_PRIXECHANTILLON" Type="real" />
+        </EntityType>
+        <EntityType Name="MOTIF_VISITE">
+          <Key>
+            <PropertyRef Name="MOT_CODE" />
+          </Key>
+          <Property Name="MOT_CODE" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="MOT_LIBEL" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OFFRIR">
+          <Key>
+            <PropertyRef Name="VIS_MATRICULE" />
+            <PropertyRef Name="RAP_NUM" />
+            <PropertyRef Name="MED_DEPOTLEGAL" />
+          </Key>
+          <Property Name="VIS_MATRICULE" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="RAP_NUM" Type="int" Nullable="false" />
+          <Property Name="MED_DEPOTLEGAL" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="OFF_QTE" Type="smallint" />
+        </EntityType>
+        <EntityType Name="POSSEDER">
+          <Key>
+            <PropertyRef Name="PRA_NUM" />
+            <PropertyRef Name="SPE_CODE" />
+          </Key>
+          <Property Name="PRA_NUM" Type="smallint" Nullable="false" />
+          <Property Name="SPE_CODE" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="POS_DIPLOME" Type="nvarchar" MaxLength="10" />
+          <Property Name="POS_COEFPRESCRIPTION" Type="real" />
+        </EntityType>
+        <EntityType Name="PRATICIEN">
+          <Key>
+            <PropertyRef Name="PRA_NUM" />
+          </Key>
+          <Property Name="PRA_NUM" Type="smallint" Nullable="false" />
+          <Property Name="PRA_NOM" Type="nvarchar" MaxLength="25" />
+          <Property Name="PRA_PRENOM" Type="nvarchar" MaxLength="30" />
+          <Property Name="PRA_ADRESSE" Type="nvarchar" MaxLength="50" />
+          <Property Name="PRA_CP" Type="nvarchar" MaxLength="5" />
+          <Property Name="PRA_VILLE" Type="nvarchar" MaxLength="25" />
+          <Property Name="PRA_COEFNOTORIETE" Type="real" />
+          <Property Name="TYP_CODE" Type="nvarchar" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RAPPORT_VISITE">
+          <Key>
+            <PropertyRef Name="RAP_MATRICULE" />
+            <PropertyRef Name="RAP_NUM" />
+          </Key>
+          <Property Name="RAP_MATRICULE" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="RAP_NUM" Type="int" Nullable="false" />
+          <Property Name="RAP_PRANUM" Type="smallint" Nullable="false" />
+          <Property Name="RAP_DATE" Type="datetime" Nullable="false" />
+          <Property Name="RAP_DATVISIT" Type="datetime" Nullable="false" />
+          <Property Name="RAP_ETAT" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="RAP_CONFIANCE" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="RAP_BILAN" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RAP_MOTIF" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="RAP_MOTIFAUTRE" Type="nvarchar" MaxLength="25" />
+          <Property Name="RAP_NOMREMPL" Type="nvarchar" MaxLength="25" />
+          <Property Name="RAP_PNOMREMPL" Type="nvarchar" MaxLength="30" />
+          <Property Name="RAP_MED1" Type="nvarchar" MaxLength="10" />
+          <Property Name="RAP_MED2" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="REGION">
+          <Key>
+            <PropertyRef Name="REG_CODE" />
+          </Key>
+          <Property Name="REG_CODE" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="SEC_CODE" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="REG_NOM" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SECTEUR">
+          <Key>
+            <PropertyRef Name="SEC_CODE" />
+          </Key>
+          <Property Name="SEC_CODE" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="SEC_LIBELLE" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="SPECIALITE">
+          <Key>
+            <PropertyRef Name="SPE_CODE" />
+          </Key>
+          <Property Name="SPE_CODE" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="SPE_LIBELLE" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TRAVAILLER">
+          <Key>
+            <PropertyRef Name="VIS_MATRICULE" />
+            <PropertyRef Name="JJMMAA" />
+            <PropertyRef Name="REG_CODE" />
+          </Key>
+          <Property Name="VIS_MATRICULE" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="JJMMAA" Type="datetime" Nullable="false" />
+          <Property Name="REG_CODE" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="TRA_ROLE" Type="nvarchar" MaxLength="11" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TYPE_PRATICIEN">
+          <Key>
+            <PropertyRef Name="TYP_CODE" />
+          </Key>
+          <Property Name="TYP_CODE" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="TYP_LIBELLE" Type="nvarchar" MaxLength="25" />
+          <Property Name="TYP_LIEU" Type="nvarchar" MaxLength="35" />
+        </EntityType>
+        <EntityType Name="VISITEUR">
+          <Key>
+            <PropertyRef Name="VIS_MATRICULE" />
+          </Key>
+          <Property Name="VIS_MATRICULE" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="VIS_NOM" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Vis_PRENOM" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VIS_ADRESSE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VIS_CP" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="VIS_VILLE" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="VIS_DATEEMBAUCHE" Type="datetime" Nullable="false" />
+          <Property Name="SEC_CODE" Type="nvarchar" MaxLength="1" />
+          <Property Name="LAB_CODE" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="vis_mdp" Type="char" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'GSB_Visite_JEANNETTE.dbo.VAFFECTATION' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="VAFFECTATION">
+          <Key>
+            <PropertyRef Name="VIS_MATRICULE" />
+            <PropertyRef Name="JJMMAA" />
+            <PropertyRef Name="REG_CODE" />
+            <PropertyRef Name="TRA_ROLE" />
+          </Key>
+          <Property Name="VIS_MATRICULE" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="JJMMAA" Type="datetime" Nullable="false" />
+          <Property Name="REG_CODE" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="TRA_ROLE" Type="nvarchar" MaxLength="11" Nullable="false" />
+        </EntityType>
+        <Association Name="MEDICAMENT_FK00">
+          <End Role="FAMILLE" Type="Self.FAMILLE" Multiplicity="1" />
+          <End Role="MEDICAMENT" Type="Self.MEDICAMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FAMILLE">
+              <PropertyRef Name="FAM_CODE" />
+            </Principal>
+            <Dependent Role="MEDICAMENT">
+              <PropertyRef Name="FAM_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OFFRIR_FK00">
+          <End Role="MEDICAMENT" Type="Self.MEDICAMENT" Multiplicity="1" />
+          <End Role="OFFRIR" Type="Self.OFFRIR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MEDICAMENT">
+              <PropertyRef Name="MED_DEPOTLEGAL" />
+            </Principal>
+            <Dependent Role="OFFRIR">
+              <PropertyRef Name="MED_DEPOTLEGAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OFFRIR_FK01">
+          <End Role="RAPPORT_VISITE" Type="Self.RAPPORT_VISITE" Multiplicity="1" />
+          <End Role="OFFRIR" Type="Self.OFFRIR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAPPORT_VISITE">
+              <PropertyRef Name="RAP_MATRICULE" />
+              <PropertyRef Name="RAP_NUM" />
+            </Principal>
+            <Dependent Role="OFFRIR">
+              <PropertyRef Name="VIS_MATRICULE" />
+              <PropertyRef Name="RAP_NUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="POSSEDER_FK00">
+          <End Role="SPECIALITE" Type="Self.SPECIALITE" Multiplicity="1" />
+          <End Role="POSSEDER" Type="Self.POSSEDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SPECIALITE">
+              <PropertyRef Name="SPE_CODE" />
+            </Principal>
+            <Dependent Role="POSSEDER">
+              <PropertyRef Name="SPE_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="POSSEDER_FK01">
+          <End Role="PRATICIEN" Type="Self.PRATICIEN" Multiplicity="1" />
+          <End Role="POSSEDER" Type="Self.POSSEDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRATICIEN">
+              <PropertyRef Name="PRA_NUM" />
+            </Principal>
+            <Dependent Role="POSSEDER">
+              <PropertyRef Name="PRA_NUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRATICIEN_FK00">
+          <End Role="TYPE_PRATICIEN" Type="Self.TYPE_PRATICIEN" Multiplicity="1" />
+          <End Role="PRATICIEN" Type="Self.PRATICIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPE_PRATICIEN">
+              <PropertyRef Name="TYP_CODE" />
+            </Principal>
+            <Dependent Role="PRATICIEN">
+              <PropertyRef Name="TYP_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RAPPORT_VISITE_FK00">
+          <End Role="PRATICIEN" Type="Self.PRATICIEN" Multiplicity="1" />
+          <End Role="RAPPORT_VISITE" Type="Self.RAPPORT_VISITE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRATICIEN">
+              <PropertyRef Name="PRA_NUM" />
+            </Principal>
+            <Dependent Role="RAPPORT_VISITE">
+              <PropertyRef Name="RAP_PRANUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RAPPORT_VISITE_FK01">
+          <End Role="VISITEUR" Type="Self.VISITEUR" Multiplicity="1" />
+          <End Role="RAPPORT_VISITE" Type="Self.RAPPORT_VISITE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VISITEUR">
+              <PropertyRef Name="VIS_MATRICULE" />
+            </Principal>
+            <Dependent Role="RAPPORT_VISITE">
+              <PropertyRef Name="RAP_MATRICULE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RAPPORT_VISITE_FK02">
+          <End Role="MEDICAMENT" Type="Self.MEDICAMENT" Multiplicity="0..1" />
+          <End Role="RAPPORT_VISITE" Type="Self.RAPPORT_VISITE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MEDICAMENT">
+              <PropertyRef Name="MED_DEPOTLEGAL" />
+            </Principal>
+            <Dependent Role="RAPPORT_VISITE">
+              <PropertyRef Name="RAP_MED1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RAPPORT_VISITE_FK03">
+          <End Role="MEDICAMENT" Type="Self.MEDICAMENT" Multiplicity="0..1" />
+          <End Role="RAPPORT_VISITE" Type="Self.RAPPORT_VISITE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MEDICAMENT">
+              <PropertyRef Name="MED_DEPOTLEGAL" />
+            </Principal>
+            <Dependent Role="RAPPORT_VISITE">
+              <PropertyRef Name="RAP_MED2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RAPPORT_VISITE_FK04">
+          <End Role="MOTIF_VISITE" Type="Self.MOTIF_VISITE" Multiplicity="1" />
+          <End Role="RAPPORT_VISITE" Type="Self.RAPPORT_VISITE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MOTIF_VISITE">
+              <PropertyRef Name="MOT_CODE" />
+            </Principal>
+            <Dependent Role="RAPPORT_VISITE">
+              <PropertyRef Name="RAP_MOTIF" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="REGION_FK00">
+          <End Role="SECTEUR" Type="Self.SECTEUR" Multiplicity="1" />
+          <End Role="REGION" Type="Self.REGION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SECTEUR">
+              <PropertyRef Name="SEC_CODE" />
+            </Principal>
+            <Dependent Role="REGION">
+              <PropertyRef Name="SEC_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRAVAILLER_FK00">
+          <End Role="REGION" Type="Self.REGION" Multiplicity="1" />
+          <End Role="TRAVAILLER" Type="Self.TRAVAILLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REGION">
+              <PropertyRef Name="REG_CODE" />
+            </Principal>
+            <Dependent Role="TRAVAILLER">
+              <PropertyRef Name="REG_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRAVAILLER_FK01">
+          <End Role="VISITEUR" Type="Self.VISITEUR" Multiplicity="1" />
+          <End Role="TRAVAILLER" Type="Self.TRAVAILLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VISITEUR">
+              <PropertyRef Name="VIS_MATRICULE" />
+            </Principal>
+            <Dependent Role="TRAVAILLER">
+              <PropertyRef Name="VIS_MATRICULE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="VISITEUR_FK01">
+          <End Role="SECTEUR" Type="Self.SECTEUR" Multiplicity="0..1" />
+          <End Role="VISITEUR" Type="Self.VISITEUR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SECTEUR">
+              <PropertyRef Name="SEC_CODE" />
+            </Principal>
+            <Dependent Role="VISITEUR">
+              <PropertyRef Name="SEC_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="addRapport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pMat" Type="nvarchar" Mode="In" />
+          <Parameter Name="pPranum" Type="smallint" Mode="In" />
+          <Parameter Name="pDatVisit" Type="datetime" Mode="In" />
+          <Parameter Name="pEtat" Type="nchar" Mode="In" />
+          <Parameter Name="pConf" Type="nchar" Mode="In" />
+          <Parameter Name="pBilan" Type="nvarchar" Mode="In" />
+          <Parameter Name="pMotif" Type="nchar" Mode="In" />
+          <Parameter Name="pAutre" Type="nvarchar" Mode="In" />
+          <Parameter Name="pNomR" Type="nvarchar" Mode="In" />
+          <Parameter Name="pPrenomR" Type="nvarchar" Mode="In" />
+          <Parameter Name="pMed1" Type="nvarchar" Mode="In" />
+          <Parameter Name="pMed2" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="updRapport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pMat" Type="nvarchar" Mode="In" />
+          <Parameter Name="pNum" Type="int" Mode="In" />
+          <Parameter Name="pPranum" Type="smallint" Mode="In" />
+          <Parameter Name="pDatVisit" Type="datetime" Mode="In" />
+          <Parameter Name="pEtat" Type="nchar" Mode="In" />
+          <Parameter Name="pConf" Type="nchar" Mode="In" />
+          <Parameter Name="pBilan" Type="nvarchar" Mode="In" />
+          <Parameter Name="pMotif" Type="nchar" Mode="In" />
+          <Parameter Name="pAutre" Type="nvarchar" Mode="In" />
+          <Parameter Name="pNomR" Type="nvarchar" Mode="In" />
+          <Parameter Name="pPrenomR" Type="nvarchar" Mode="In" />
+          <Parameter Name="pMed1" Type="nvarchar" Mode="In" />
+          <Parameter Name="pMed2" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="GSBCRmodeleStoreContainer">
+          <EntitySet Name="FAMILLE" EntityType="Self.FAMILLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MEDICAMENT" EntityType="Self.MEDICAMENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MOTIF_VISITE" EntityType="Self.MOTIF_VISITE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OFFRIR" EntityType="Self.OFFRIR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="POSSEDER" EntityType="Self.POSSEDER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRATICIEN" EntityType="Self.PRATICIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RAPPORT_VISITE" EntityType="Self.RAPPORT_VISITE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="REGION" EntityType="Self.REGION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SECTEUR" EntityType="Self.SECTEUR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SPECIALITE" EntityType="Self.SPECIALITE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRAVAILLER" EntityType="Self.TRAVAILLER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TYPE_PRATICIEN" EntityType="Self.TYPE_PRATICIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VISITEUR" EntityType="Self.VISITEUR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VAFFECTATION" EntityType="Self.VAFFECTATION" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[VAFFECTATION].[VIS_MATRICULE] AS [VIS_MATRICULE], 
+[VAFFECTATION].[JJMMAA] AS [JJMMAA], 
+[VAFFECTATION].[REG_CODE] AS [REG_CODE], 
+[VAFFECTATION].[TRA_ROLE] AS [TRA_ROLE]
+FROM [dbo].[VAFFECTATION] AS [VAFFECTATION]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="MEDICAMENT_FK00" Association="Self.MEDICAMENT_FK00">
+            <End Role="FAMILLE" EntitySet="FAMILLE" />
+            <End Role="MEDICAMENT" EntitySet="MEDICAMENT" />
+          </AssociationSet>
+          <AssociationSet Name="OFFRIR_FK00" Association="Self.OFFRIR_FK00">
+            <End Role="MEDICAMENT" EntitySet="MEDICAMENT" />
+            <End Role="OFFRIR" EntitySet="OFFRIR" />
+          </AssociationSet>
+          <AssociationSet Name="OFFRIR_FK01" Association="Self.OFFRIR_FK01">
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+            <End Role="OFFRIR" EntitySet="OFFRIR" />
+          </AssociationSet>
+          <AssociationSet Name="POSSEDER_FK00" Association="Self.POSSEDER_FK00">
+            <End Role="SPECIALITE" EntitySet="SPECIALITE" />
+            <End Role="POSSEDER" EntitySet="POSSEDER" />
+          </AssociationSet>
+          <AssociationSet Name="POSSEDER_FK01" Association="Self.POSSEDER_FK01">
+            <End Role="PRATICIEN" EntitySet="PRATICIEN" />
+            <End Role="POSSEDER" EntitySet="POSSEDER" />
+          </AssociationSet>
+          <AssociationSet Name="PRATICIEN_FK00" Association="Self.PRATICIEN_FK00">
+            <End Role="TYPE_PRATICIEN" EntitySet="TYPE_PRATICIEN" />
+            <End Role="PRATICIEN" EntitySet="PRATICIEN" />
+          </AssociationSet>
+          <AssociationSet Name="RAPPORT_VISITE_FK00" Association="Self.RAPPORT_VISITE_FK00">
+            <End Role="PRATICIEN" EntitySet="PRATICIEN" />
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+          </AssociationSet>
+          <AssociationSet Name="RAPPORT_VISITE_FK01" Association="Self.RAPPORT_VISITE_FK01">
+            <End Role="VISITEUR" EntitySet="VISITEUR" />
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+          </AssociationSet>
+          <AssociationSet Name="RAPPORT_VISITE_FK02" Association="Self.RAPPORT_VISITE_FK02">
+            <End Role="MEDICAMENT" EntitySet="MEDICAMENT" />
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+          </AssociationSet>
+          <AssociationSet Name="RAPPORT_VISITE_FK03" Association="Self.RAPPORT_VISITE_FK03">
+            <End Role="MEDICAMENT" EntitySet="MEDICAMENT" />
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+          </AssociationSet>
+          <AssociationSet Name="RAPPORT_VISITE_FK04" Association="Self.RAPPORT_VISITE_FK04">
+            <End Role="MOTIF_VISITE" EntitySet="MOTIF_VISITE" />
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+          </AssociationSet>
+          <AssociationSet Name="REGION_FK00" Association="Self.REGION_FK00">
+            <End Role="SECTEUR" EntitySet="SECTEUR" />
+            <End Role="REGION" EntitySet="REGION" />
+          </AssociationSet>
+          <AssociationSet Name="TRAVAILLER_FK00" Association="Self.TRAVAILLER_FK00">
+            <End Role="REGION" EntitySet="REGION" />
+            <End Role="TRAVAILLER" EntitySet="TRAVAILLER" />
+          </AssociationSet>
+          <AssociationSet Name="TRAVAILLER_FK01" Association="Self.TRAVAILLER_FK01">
+            <End Role="VISITEUR" EntitySet="VISITEUR" />
+            <End Role="TRAVAILLER" EntitySet="TRAVAILLER" />
+          </AssociationSet>
+          <AssociationSet Name="VISITEUR_FK01" Association="Self.VISITEUR_FK01">
+            <End Role="SECTEUR" EntitySet="SECTEUR" />
+            <End Role="VISITEUR" EntitySet="VISITEUR" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GSBCR.modele" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="FAMILLE">
+          <Key>
+            <PropertyRef Name="FAM_CODE" />
+          </Key>
+          <Property Name="FAM_CODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FAM_LIBELLE" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LesMedicaments" Relationship="Self.MEDICAMENT_FK00" FromRole="FAMILLE" ToRole="MEDICAMENT" />
+        </EntityType>
+        <EntityType Name="MEDICAMENT">
+          <Key>
+            <PropertyRef Name="MED_DEPOTLEGAL" />
+          </Key>
+          <Property Name="MED_DEPOTLEGAL" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MED_NOMCOMMERCIAL" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="FAM_CODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MED_COMPOSITION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MED_EFFETS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MED_CONTREINDIC" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MED_PRIXECHANTILLON" Type="Single" />
+          <NavigationProperty Name="LaFamille" Relationship="Self.MEDICAMENT_FK00" FromRole="MEDICAMENT" ToRole="FAMILLE" />
+          <NavigationProperty Name="LesEchantillonsOfferts" Relationship="Self.OFFRIR_FK00" FromRole="MEDICAMENT" ToRole="OFFRIR" />
+          <NavigationProperty Name="LesRapports1" Relationship="Self.RAPPORT_VISITE_FK02" FromRole="MEDICAMENT" ToRole="RAPPORT_VISITE" />
+          <NavigationProperty Name="LesRapports2" Relationship="Self.RAPPORT_VISITE_FK03" FromRole="MEDICAMENT" ToRole="RAPPORT_VISITE" />
+        </EntityType>
+        <EntityType Name="MOTIF_VISITE">
+          <Key>
+            <PropertyRef Name="MOT_CODE" />
+          </Key>
+          <Property Name="MOT_CODE" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="MOT_LIBEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LesRapports" Relationship="Self.RAPPORT_VISITE_FK04" FromRole="MOTIF_VISITE" ToRole="RAPPORT_VISITE" />
+        </EntityType>
+        <EntityType Name="OFFRIR">
+          <Key>
+            <PropertyRef Name="VIS_MATRICULE" />
+            <PropertyRef Name="RAP_NUM" />
+            <PropertyRef Name="MED_DEPOTLEGAL" />
+          </Key>
+          <Property Name="VIS_MATRICULE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RAP_NUM" Type="Int32" Nullable="false" />
+          <Property Name="MED_DEPOTLEGAL" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OFF_QTE" Type="Int16" />
+          <NavigationProperty Name="LeMedicament" Relationship="Self.OFFRIR_FK00" FromRole="OFFRIR" ToRole="MEDICAMENT" />
+          <NavigationProperty Name="LeRapport" Relationship="Self.OFFRIR_FK01" FromRole="OFFRIR" ToRole="RAPPORT_VISITE" />
+        </EntityType>
+        <EntityType Name="POSSEDER">
+          <Key>
+            <PropertyRef Name="PRA_NUM" />
+            <PropertyRef Name="SPE_CODE" />
+          </Key>
+          <Property Name="PRA_NUM" Type="Int16" Nullable="false" />
+          <Property Name="SPE_CODE" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="POS_DIPLOME" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="POS_COEFPRESCRIPTION" Type="Single" />
+          <NavigationProperty Name="LaSpecialite" Relationship="Self.POSSEDER_FK00" FromRole="POSSEDER" ToRole="SPECIALITE" />
+          <NavigationProperty Name="LePraticien" Relationship="Self.POSSEDER_FK01" FromRole="POSSEDER" ToRole="PRATICIEN" />
+        </EntityType>
+        <EntityType Name="PRATICIEN">
+          <Key>
+            <PropertyRef Name="PRA_NUM" />
+          </Key>
+          <Property Name="PRA_NUM" Type="Int16" Nullable="false" />
+          <Property Name="PRA_NOM" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PRA_PRENOM" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PRA_ADRESSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PRA_CP" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="PRA_VILLE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PRA_COEFNOTORIETE" Type="Single" />
+          <Property Name="TYP_CODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="POSSEDERs" Relationship="Self.POSSEDER_FK01" FromRole="PRATICIEN" ToRole="POSSEDER" />
+          <NavigationProperty Name="LeType" Relationship="Self.PRATICIEN_FK00" FromRole="PRATICIEN" ToRole="TYPE_PRATICIEN" />
+          <NavigationProperty Name="LesRapports" Relationship="Self.RAPPORT_VISITE_FK00" FromRole="PRATICIEN" ToRole="RAPPORT_VISITE" />
+        </EntityType>
+        <EntityType Name="RAPPORT_VISITE">
+          <Key>
+            <PropertyRef Name="RAP_MATRICULE" />
+            <PropertyRef Name="RAP_NUM" />
+          </Key>
+          <Property Name="RAP_MATRICULE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RAP_NUM" Type="Int32" Nullable="false" />
+          <Property Name="RAP_PRANUM" Type="Int16" Nullable="false" />
+          <Property Name="RAP_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="RAP_DATVISIT" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="RAP_ETAT" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="RAP_CONFIANCE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="RAP_BILAN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RAP_MOTIF" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="RAP_MOTIFAUTRE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="RAP_NOMREMPL" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="RAP_PNOMREMPL" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="RAP_MED1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="RAP_MED2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LeMedicament1" Relationship="Self.RAPPORT_VISITE_FK02" FromRole="RAPPORT_VISITE" ToRole="MEDICAMENT" />
+          <NavigationProperty Name="LeMedicament2" Relationship="Self.RAPPORT_VISITE_FK03" FromRole="RAPPORT_VISITE" ToRole="MEDICAMENT" />
+          <NavigationProperty Name="LeMotifVisite" Relationship="Self.RAPPORT_VISITE_FK04" FromRole="RAPPORT_VISITE" ToRole="MOTIF_VISITE" />
+          <NavigationProperty Name="LesEchantillonsOfferts" Relationship="Self.OFFRIR_FK01" FromRole="RAPPORT_VISITE" ToRole="OFFRIR" />
+          <NavigationProperty Name="LePraticien" Relationship="Self.RAPPORT_VISITE_FK00" FromRole="RAPPORT_VISITE" ToRole="PRATICIEN" />
+          <NavigationProperty Name="LeVisiteur" Relationship="Self.RAPPORT_VISITE_FK01" FromRole="RAPPORT_VISITE" ToRole="VISITEUR" />
+        </EntityType>
+        <EntityType Name="REGION">
+          <Key>
+            <PropertyRef Name="REG_CODE" />
+          </Key>
+          <Property Name="REG_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SEC_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="REG_NOM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LeSecteur" Relationship="Self.REGION_FK00" FromRole="LesRegions" ToRole="LeSecteur" />
+          <NavigationProperty Name="LesVisiteursAffectes" Relationship="Self.TRAVAILLER_FK00" FromRole="REGION" ToRole="TRAVAILLER" />
+        </EntityType>
+        <EntityType Name="SECTEUR">
+          <Key>
+            <PropertyRef Name="SEC_CODE" />
+          </Key>
+          <Property Name="SEC_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SEC_LIBELLE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LesRegions" Relationship="Self.REGION_FK00" FromRole="LeSecteur" ToRole="LesRegions" />
+          <NavigationProperty Name="LesVisiteurs" Relationship="Self.VISITEUR_FK01" FromRole="SECTEUR" ToRole="VISITEUR" />
+        </EntityType>
+        <EntityType Name="SPECIALITE">
+          <Key>
+            <PropertyRef Name="SPE_CODE" />
+          </Key>
+          <Property Name="SPE_CODE" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SPE_LIBELLE" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="POSSEDERs" Relationship="Self.POSSEDER_FK00" FromRole="SPECIALITE" ToRole="POSSEDER" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TRAVAILLER">
+          <Key>
+            <PropertyRef Name="VIS_MATRICULE" />
+            <PropertyRef Name="JJMMAA" />
+            <PropertyRef Name="REG_CODE" />
+          </Key>
+          <Property Name="VIS_MATRICULE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="JJMMAA" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="REG_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TRA_ROLE" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="LaRegion" Relationship="Self.TRAVAILLER_FK00" FromRole="TRAVAILLER" ToRole="REGION" />
+          <NavigationProperty Name="LeVisiteur" Relationship="Self.TRAVAILLER_FK01" FromRole="TRAVAILLER" ToRole="VISITEUR" />
+        </EntityType>
+        <EntityType Name="TYPE_PRATICIEN">
+          <Key>
+            <PropertyRef Name="TYP_CODE" />
+          </Key>
+          <Property Name="TYP_CODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TYP_LIBELLE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="TYP_LIEU" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LesPraticiens" Relationship="Self.PRATICIEN_FK00" FromRole="TYPE_PRATICIEN" ToRole="PRATICIEN" />
+        </EntityType>
+        <EntityType Name="VISITEUR">
+          <Key>
+            <PropertyRef Name="VIS_MATRICULE" />
+          </Key>
+          <Property Name="VIS_MATRICULE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VIS_NOM" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Vis_PRENOM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VIS_ADRESSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VIS_CP" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VIS_VILLE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VIS_DATEEMBAUCHE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SEC_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="LAB_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="vis_mdp" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LesRapports" Relationship="Self.RAPPORT_VISITE_FK01" FromRole="VISITEUR" ToRole="RAPPORT_VISITE" />
+          <NavigationProperty Name="LeSecteur" Relationship="Self.VISITEUR_FK01" FromRole="VISITEUR" ToRole="SECTEUR" />
+          <NavigationProperty Name="LesAffectations" Relationship="Self.TRAVAILLER_FK01" FromRole="VISITEUR" ToRole="TRAVAILLER" />
+        </EntityType>
+        <EntityType Name="VAFFECTATION">
+          <Key>
+            <PropertyRef Name="VIS_MATRICULE" />
+            <PropertyRef Name="JJMMAA" />
+            <PropertyRef Name="REG_CODE" />
+            <PropertyRef Name="TRA_ROLE" />
+          </Key>
+          <Property Name="VIS_MATRICULE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="JJMMAA" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="REG_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TRA_ROLE" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <Association Name="MEDICAMENT_FK00">
+          <End Role="FAMILLE" Type="Self.FAMILLE" Multiplicity="1" />
+          <End Role="MEDICAMENT" Type="Self.MEDICAMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FAMILLE">
+              <PropertyRef Name="FAM_CODE" />
+            </Principal>
+            <Dependent Role="MEDICAMENT">
+              <PropertyRef Name="FAM_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OFFRIR_FK00">
+          <End Role="MEDICAMENT" Type="Self.MEDICAMENT" Multiplicity="1" />
+          <End Role="OFFRIR" Type="Self.OFFRIR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MEDICAMENT">
+              <PropertyRef Name="MED_DEPOTLEGAL" />
+            </Principal>
+            <Dependent Role="OFFRIR">
+              <PropertyRef Name="MED_DEPOTLEGAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RAPPORT_VISITE_FK02">
+          <End Role="MEDICAMENT" Type="Self.MEDICAMENT" Multiplicity="0..1" />
+          <End Role="RAPPORT_VISITE" Type="Self.RAPPORT_VISITE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MEDICAMENT">
+              <PropertyRef Name="MED_DEPOTLEGAL" />
+            </Principal>
+            <Dependent Role="RAPPORT_VISITE">
+              <PropertyRef Name="RAP_MED1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RAPPORT_VISITE_FK03">
+          <End Role="MEDICAMENT" Type="Self.MEDICAMENT" Multiplicity="0..1" />
+          <End Role="RAPPORT_VISITE" Type="Self.RAPPORT_VISITE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MEDICAMENT">
+              <PropertyRef Name="MED_DEPOTLEGAL" />
+            </Principal>
+            <Dependent Role="RAPPORT_VISITE">
+              <PropertyRef Name="RAP_MED2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RAPPORT_VISITE_FK04">
+          <End Role="MOTIF_VISITE" Type="Self.MOTIF_VISITE" Multiplicity="1" />
+          <End Role="RAPPORT_VISITE" Type="Self.RAPPORT_VISITE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MOTIF_VISITE">
+              <PropertyRef Name="MOT_CODE" />
+            </Principal>
+            <Dependent Role="RAPPORT_VISITE">
+              <PropertyRef Name="RAP_MOTIF" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OFFRIR_FK01">
+          <End Role="RAPPORT_VISITE" Type="Self.RAPPORT_VISITE" Multiplicity="1" />
+          <End Role="OFFRIR" Type="Self.OFFRIR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAPPORT_VISITE">
+              <PropertyRef Name="RAP_MATRICULE" />
+              <PropertyRef Name="RAP_NUM" />
+            </Principal>
+            <Dependent Role="OFFRIR">
+              <PropertyRef Name="VIS_MATRICULE" />
+              <PropertyRef Name="RAP_NUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="POSSEDER_FK00">
+          <End Role="SPECIALITE" Type="Self.SPECIALITE" Multiplicity="1" />
+          <End Role="POSSEDER" Type="Self.POSSEDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SPECIALITE">
+              <PropertyRef Name="SPE_CODE" />
+            </Principal>
+            <Dependent Role="POSSEDER">
+              <PropertyRef Name="SPE_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="POSSEDER_FK01">
+          <End Role="PRATICIEN" Type="Self.PRATICIEN" Multiplicity="1" />
+          <End Role="POSSEDER" Type="Self.POSSEDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRATICIEN">
+              <PropertyRef Name="PRA_NUM" />
+            </Principal>
+            <Dependent Role="POSSEDER">
+              <PropertyRef Name="PRA_NUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRATICIEN_FK00">
+          <End Role="TYPE_PRATICIEN" Type="Self.TYPE_PRATICIEN" Multiplicity="1" />
+          <End Role="PRATICIEN" Type="Self.PRATICIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPE_PRATICIEN">
+              <PropertyRef Name="TYP_CODE" />
+            </Principal>
+            <Dependent Role="PRATICIEN">
+              <PropertyRef Name="TYP_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RAPPORT_VISITE_FK00">
+          <End Role="PRATICIEN" Type="Self.PRATICIEN" Multiplicity="1" />
+          <End Role="RAPPORT_VISITE" Type="Self.RAPPORT_VISITE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRATICIEN">
+              <PropertyRef Name="PRA_NUM" />
+            </Principal>
+            <Dependent Role="RAPPORT_VISITE">
+              <PropertyRef Name="RAP_PRANUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RAPPORT_VISITE_FK01">
+          <End Role="VISITEUR" Type="Self.VISITEUR" Multiplicity="1" />
+          <End Role="RAPPORT_VISITE" Type="Self.RAPPORT_VISITE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VISITEUR">
+              <PropertyRef Name="VIS_MATRICULE" />
+            </Principal>
+            <Dependent Role="RAPPORT_VISITE">
+              <PropertyRef Name="RAP_MATRICULE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="REGION_FK00">
+          <End Role="LeSecteur" Type="Self.SECTEUR" Multiplicity="1" />
+          <End Role="LesRegions" Type="Self.REGION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LeSecteur">
+              <PropertyRef Name="SEC_CODE" />
+            </Principal>
+            <Dependent Role="LesRegions">
+              <PropertyRef Name="SEC_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRAVAILLER_FK00">
+          <End Role="REGION" Type="Self.REGION" Multiplicity="1" />
+          <End Role="TRAVAILLER" Type="Self.TRAVAILLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REGION">
+              <PropertyRef Name="REG_CODE" />
+            </Principal>
+            <Dependent Role="TRAVAILLER">
+              <PropertyRef Name="REG_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="VISITEUR_FK01">
+          <End Role="SECTEUR" Type="Self.SECTEUR" Multiplicity="0..1" />
+          <End Role="VISITEUR" Type="Self.VISITEUR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SECTEUR">
+              <PropertyRef Name="SEC_CODE" />
+            </Principal>
+            <Dependent Role="VISITEUR">
+              <PropertyRef Name="SEC_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRAVAILLER_FK01">
+          <End Role="VISITEUR" Type="Self.VISITEUR" Multiplicity="1" />
+          <End Role="TRAVAILLER" Type="Self.TRAVAILLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VISITEUR">
+              <PropertyRef Name="VIS_MATRICULE" />
+            </Principal>
+            <Dependent Role="TRAVAILLER">
+              <PropertyRef Name="VIS_MATRICULE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GSB_VisiteEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FAMILLE" EntityType="Self.FAMILLE" />
+          <EntitySet Name="MEDICAMENT" EntityType="Self.MEDICAMENT" />
+          <EntitySet Name="MOTIF_VISITE" EntityType="Self.MOTIF_VISITE" />
+          <EntitySet Name="OFFRIR" EntityType="Self.OFFRIR" />
+          <EntitySet Name="POSSEDER" EntityType="Self.POSSEDER" />
+          <EntitySet Name="PRATICIEN" EntityType="Self.PRATICIEN" />
+          <EntitySet Name="RAPPORT_VISITE" EntityType="Self.RAPPORT_VISITE" />
+          <EntitySet Name="REGION" EntityType="Self.REGION" />
+          <EntitySet Name="SECTEUR" EntityType="Self.SECTEUR" />
+          <EntitySet Name="SPECIALITE" EntityType="Self.SPECIALITE" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TRAVAILLER" EntityType="Self.TRAVAILLER" />
+          <EntitySet Name="TYPE_PRATICIEN" EntityType="Self.TYPE_PRATICIEN" />
+          <EntitySet Name="VISITEUR" EntityType="Self.VISITEUR" />
+          <EntitySet Name="VAFFECTATION" EntityType="Self.VAFFECTATION" />
+          <AssociationSet Name="MEDICAMENT_FK00" Association="Self.MEDICAMENT_FK00">
+            <End Role="FAMILLE" EntitySet="FAMILLE" />
+            <End Role="MEDICAMENT" EntitySet="MEDICAMENT" />
+          </AssociationSet>
+          <AssociationSet Name="OFFRIR_FK00" Association="Self.OFFRIR_FK00">
+            <End Role="MEDICAMENT" EntitySet="MEDICAMENT" />
+            <End Role="OFFRIR" EntitySet="OFFRIR" />
+          </AssociationSet>
+          <AssociationSet Name="RAPPORT_VISITE_FK02" Association="Self.RAPPORT_VISITE_FK02">
+            <End Role="MEDICAMENT" EntitySet="MEDICAMENT" />
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+          </AssociationSet>
+          <AssociationSet Name="RAPPORT_VISITE_FK03" Association="Self.RAPPORT_VISITE_FK03">
+            <End Role="MEDICAMENT" EntitySet="MEDICAMENT" />
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+          </AssociationSet>
+          <AssociationSet Name="RAPPORT_VISITE_FK04" Association="Self.RAPPORT_VISITE_FK04">
+            <End Role="MOTIF_VISITE" EntitySet="MOTIF_VISITE" />
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+          </AssociationSet>
+          <AssociationSet Name="OFFRIR_FK01" Association="Self.OFFRIR_FK01">
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+            <End Role="OFFRIR" EntitySet="OFFRIR" />
+          </AssociationSet>
+          <AssociationSet Name="POSSEDER_FK00" Association="Self.POSSEDER_FK00">
+            <End Role="SPECIALITE" EntitySet="SPECIALITE" />
+            <End Role="POSSEDER" EntitySet="POSSEDER" />
+          </AssociationSet>
+          <AssociationSet Name="POSSEDER_FK01" Association="Self.POSSEDER_FK01">
+            <End Role="PRATICIEN" EntitySet="PRATICIEN" />
+            <End Role="POSSEDER" EntitySet="POSSEDER" />
+          </AssociationSet>
+          <AssociationSet Name="PRATICIEN_FK00" Association="Self.PRATICIEN_FK00">
+            <End Role="TYPE_PRATICIEN" EntitySet="TYPE_PRATICIEN" />
+            <End Role="PRATICIEN" EntitySet="PRATICIEN" />
+          </AssociationSet>
+          <AssociationSet Name="RAPPORT_VISITE_FK00" Association="Self.RAPPORT_VISITE_FK00">
+            <End Role="PRATICIEN" EntitySet="PRATICIEN" />
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+          </AssociationSet>
+          <AssociationSet Name="RAPPORT_VISITE_FK01" Association="Self.RAPPORT_VISITE_FK01">
+            <End Role="VISITEUR" EntitySet="VISITEUR" />
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+          </AssociationSet>
+          <AssociationSet Name="REGION_FK00" Association="Self.REGION_FK00">
+            <End Role="LeSecteur" EntitySet="SECTEUR" />
+            <End Role="LesRegions" EntitySet="REGION" />
+          </AssociationSet>
+          <AssociationSet Name="TRAVAILLER_FK00" Association="Self.TRAVAILLER_FK00">
+            <End Role="REGION" EntitySet="REGION" />
+            <End Role="TRAVAILLER" EntitySet="TRAVAILLER" />
+          </AssociationSet>
+          <AssociationSet Name="VISITEUR_FK01" Association="Self.VISITEUR_FK01">
+            <End Role="SECTEUR" EntitySet="SECTEUR" />
+            <End Role="VISITEUR" EntitySet="VISITEUR" />
+          </AssociationSet>
+          <AssociationSet Name="TRAVAILLER_FK01" Association="Self.TRAVAILLER_FK01">
+            <End Role="VISITEUR" EntitySet="VISITEUR" />
+            <End Role="TRAVAILLER" EntitySet="TRAVAILLER" />
+          </AssociationSet>
+          <FunctionImport Name="addRapport" ReturnType="Collection(Int32)">
+            <Parameter Name="pMat" Mode="In" Type="String" />
+            <Parameter Name="pPranum" Mode="In" Type="Int16" />
+            <Parameter Name="pDatVisit" Mode="In" Type="DateTime" />
+            <Parameter Name="pEtat" Mode="In" Type="String" />
+            <Parameter Name="pConf" Mode="In" Type="String" />
+            <Parameter Name="pBilan" Mode="In" Type="String" />
+            <Parameter Name="pMotif" Mode="In" Type="String" />
+            <Parameter Name="pAutre" Mode="In" Type="String" />
+            <Parameter Name="pNomR" Mode="In" Type="String" />
+            <Parameter Name="pPrenomR" Mode="In" Type="String" />
+            <Parameter Name="pMed1" Mode="In" Type="String" />
+            <Parameter Name="pMed2" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="updRapport">
+            <Parameter Name="pMat" Mode="In" Type="String" />
+            <Parameter Name="pNum" Mode="In" Type="Int32" />
+            <Parameter Name="pPranum" Mode="In" Type="Int16" />
+            <Parameter Name="pDatVisit" Mode="In" Type="DateTime" />
+            <Parameter Name="pEtat" Mode="In" Type="String" />
+            <Parameter Name="pConf" Mode="In" Type="String" />
+            <Parameter Name="pBilan" Mode="In" Type="String" />
+            <Parameter Name="pMotif" Mode="In" Type="String" />
+            <Parameter Name="pAutre" Mode="In" Type="String" />
+            <Parameter Name="pNomR" Mode="In" Type="String" />
+            <Parameter Name="pPrenomR" Mode="In" Type="String" />
+            <Parameter Name="pMed1" Mode="In" Type="String" />
+            <Parameter Name="pMed2" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(GSBCR.modele.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(GSBCR.modele.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GSBCRmodeleStoreContainer" CdmEntityContainer="GSB_VisiteEntities">
+          <EntitySetMapping Name="FAMILLE">
+            <EntityTypeMapping TypeName="GSBCR.modele.FAMILLE">
+              <MappingFragment StoreEntitySet="FAMILLE">
+                <ScalarProperty Name="FAM_CODE" ColumnName="FAM_CODE" />
+                <ScalarProperty Name="FAM_LIBELLE" ColumnName="FAM_LIBELLE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MEDICAMENT">
+            <EntityTypeMapping TypeName="GSBCR.modele.MEDICAMENT">
+              <MappingFragment StoreEntitySet="MEDICAMENT">
+                <ScalarProperty Name="MED_DEPOTLEGAL" ColumnName="MED_DEPOTLEGAL" />
+                <ScalarProperty Name="MED_NOMCOMMERCIAL" ColumnName="MED_NOMCOMMERCIAL" />
+                <ScalarProperty Name="FAM_CODE" ColumnName="FAM_CODE" />
+                <ScalarProperty Name="MED_COMPOSITION" ColumnName="MED_COMPOSITION" />
+                <ScalarProperty Name="MED_EFFETS" ColumnName="MED_EFFETS" />
+                <ScalarProperty Name="MED_CONTREINDIC" ColumnName="MED_CONTREINDIC" />
+                <ScalarProperty Name="MED_PRIXECHANTILLON" ColumnName="MED_PRIXECHANTILLON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MOTIF_VISITE">
+            <EntityTypeMapping TypeName="GSBCR.modele.MOTIF_VISITE">
+              <MappingFragment StoreEntitySet="MOTIF_VISITE">
+                <ScalarProperty Name="MOT_CODE" ColumnName="MOT_CODE" />
+                <ScalarProperty Name="MOT_LIBEL" ColumnName="MOT_LIBEL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OFFRIR">
+            <EntityTypeMapping TypeName="GSBCR.modele.OFFRIR">
+              <MappingFragment StoreEntitySet="OFFRIR">
+                <ScalarProperty Name="VIS_MATRICULE" ColumnName="VIS_MATRICULE" />
+                <ScalarProperty Name="RAP_NUM" ColumnName="RAP_NUM" />
+                <ScalarProperty Name="MED_DEPOTLEGAL" ColumnName="MED_DEPOTLEGAL" />
+                <ScalarProperty Name="OFF_QTE" ColumnName="OFF_QTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="POSSEDER">
+            <EntityTypeMapping TypeName="GSBCR.modele.POSSEDER">
+              <MappingFragment StoreEntitySet="POSSEDER">
+                <ScalarProperty Name="PRA_NUM" ColumnName="PRA_NUM" />
+                <ScalarProperty Name="SPE_CODE" ColumnName="SPE_CODE" />
+                <ScalarProperty Name="POS_DIPLOME" ColumnName="POS_DIPLOME" />
+                <ScalarProperty Name="POS_COEFPRESCRIPTION" ColumnName="POS_COEFPRESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRATICIEN">
+            <EntityTypeMapping TypeName="GSBCR.modele.PRATICIEN">
+              <MappingFragment StoreEntitySet="PRATICIEN">
+                <ScalarProperty Name="PRA_NUM" ColumnName="PRA_NUM" />
+                <ScalarProperty Name="PRA_NOM" ColumnName="PRA_NOM" />
+                <ScalarProperty Name="PRA_PRENOM" ColumnName="PRA_PRENOM" />
+                <ScalarProperty Name="PRA_ADRESSE" ColumnName="PRA_ADRESSE" />
+                <ScalarProperty Name="PRA_CP" ColumnName="PRA_CP" />
+                <ScalarProperty Name="PRA_VILLE" ColumnName="PRA_VILLE" />
+                <ScalarProperty Name="PRA_COEFNOTORIETE" ColumnName="PRA_COEFNOTORIETE" />
+                <ScalarProperty Name="TYP_CODE" ColumnName="TYP_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RAPPORT_VISITE">
+            <EntityTypeMapping TypeName="GSBCR.modele.RAPPORT_VISITE">
+              <MappingFragment StoreEntitySet="RAPPORT_VISITE">
+                <ScalarProperty Name="RAP_MATRICULE" ColumnName="RAP_MATRICULE" />
+                <ScalarProperty Name="RAP_NUM" ColumnName="RAP_NUM" />
+                <ScalarProperty Name="RAP_PRANUM" ColumnName="RAP_PRANUM" />
+                <ScalarProperty Name="RAP_DATE" ColumnName="RAP_DATE" />
+                <ScalarProperty Name="RAP_DATVISIT" ColumnName="RAP_DATVISIT" />
+                <ScalarProperty Name="RAP_ETAT" ColumnName="RAP_ETAT" />
+                <ScalarProperty Name="RAP_CONFIANCE" ColumnName="RAP_CONFIANCE" />
+                <ScalarProperty Name="RAP_BILAN" ColumnName="RAP_BILAN" />
+                <ScalarProperty Name="RAP_MOTIF" ColumnName="RAP_MOTIF" />
+                <ScalarProperty Name="RAP_MOTIFAUTRE" ColumnName="RAP_MOTIFAUTRE" />
+                <ScalarProperty Name="RAP_NOMREMPL" ColumnName="RAP_NOMREMPL" />
+                <ScalarProperty Name="RAP_PNOMREMPL" ColumnName="RAP_PNOMREMPL" />
+                <ScalarProperty Name="RAP_MED1" ColumnName="RAP_MED1" />
+                <ScalarProperty Name="RAP_MED2" ColumnName="RAP_MED2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="GSBCR.modele.RAPPORT_VISITE">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="GSBCR.modele.Store.addRapport" >
+                  <ScalarProperty Name="RAP_MED2" ParameterName="pMed2" />
+                  <ScalarProperty Name="RAP_MED1" ParameterName="pMed1" />
+                  <ScalarProperty Name="RAP_PNOMREMPL" ParameterName="pPrenomR" />
+                  <ScalarProperty Name="RAP_NOMREMPL" ParameterName="pNomR" />
+                  <ScalarProperty Name="RAP_MOTIFAUTRE" ParameterName="pAutre" />
+                  <ScalarProperty Name="RAP_MOTIF" ParameterName="pMotif" />
+                  <ScalarProperty Name="RAP_BILAN" ParameterName="pBilan" />
+                  <ScalarProperty Name="RAP_CONFIANCE" ParameterName="pConf" />
+                  <ScalarProperty Name="RAP_ETAT" ParameterName="pEtat" />
+                  <ScalarProperty Name="RAP_DATVISIT" ParameterName="pDatVisit" />
+                  <ScalarProperty Name="RAP_PRANUM" ParameterName="pPranum" />
+                  <ScalarProperty Name="RAP_MATRICULE" ParameterName="pMat" />
+                  <ResultBinding Name="RAP_NUM" ColumnName="pNum" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="GSBCR.modele.Store.updRapport" >
+                  <ScalarProperty Name="RAP_MED2" ParameterName="pMed2" Version="Current" />
+                  <ScalarProperty Name="RAP_MED1" ParameterName="pMed1" Version="Current" />
+                  <ScalarProperty Name="RAP_PNOMREMPL" ParameterName="pPrenomR" Version="Current" />
+                  <ScalarProperty Name="RAP_NOMREMPL" ParameterName="pNomR" Version="Current" />
+                  <ScalarProperty Name="RAP_MOTIFAUTRE" ParameterName="pAutre" Version="Current" />
+                  <ScalarProperty Name="RAP_MOTIF" ParameterName="pMotif" Version="Current" />
+                  <ScalarProperty Name="RAP_BILAN" ParameterName="pBilan" Version="Current" />
+                  <ScalarProperty Name="RAP_CONFIANCE" ParameterName="pConf" Version="Current" />
+                  <ScalarProperty Name="RAP_ETAT" ParameterName="pEtat" Version="Current" />
+                  <ScalarProperty Name="RAP_DATVISIT" ParameterName="pDatVisit" Version="Current" />
+                  <ScalarProperty Name="RAP_PRANUM" ParameterName="pPranum" Version="Current" />
+                  <ScalarProperty Name="RAP_NUM" ParameterName="pNum" Version="Current" />
+                  <ScalarProperty Name="RAP_MATRICULE" ParameterName="pMat" Version="Current" />
+                </UpdateFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REGION">
+            <EntityTypeMapping TypeName="GSBCR.modele.REGION">
+              <MappingFragment StoreEntitySet="REGION">
+                <ScalarProperty Name="REG_CODE" ColumnName="REG_CODE" />
+                <ScalarProperty Name="SEC_CODE" ColumnName="SEC_CODE" />
+                <ScalarProperty Name="REG_NOM" ColumnName="REG_NOM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SECTEUR">
+            <EntityTypeMapping TypeName="GSBCR.modele.SECTEUR">
+              <MappingFragment StoreEntitySet="SECTEUR">
+                <ScalarProperty Name="SEC_CODE" ColumnName="SEC_CODE" />
+                <ScalarProperty Name="SEC_LIBELLE" ColumnName="SEC_LIBELLE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SPECIALITE">
+            <EntityTypeMapping TypeName="GSBCR.modele.SPECIALITE">
+              <MappingFragment StoreEntitySet="SPECIALITE">
+                <ScalarProperty Name="SPE_CODE" ColumnName="SPE_CODE" />
+                <ScalarProperty Name="SPE_LIBELLE" ColumnName="SPE_LIBELLE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="GSBCR.modele.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRAVAILLER">
+            <EntityTypeMapping TypeName="GSBCR.modele.TRAVAILLER">
+              <MappingFragment StoreEntitySet="TRAVAILLER">
+                <ScalarProperty Name="VIS_MATRICULE" ColumnName="VIS_MATRICULE" />
+                <ScalarProperty Name="JJMMAA" ColumnName="JJMMAA" />
+                <ScalarProperty Name="REG_CODE" ColumnName="REG_CODE" />
+                <ScalarProperty Name="TRA_ROLE" ColumnName="TRA_ROLE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYPE_PRATICIEN">
+            <EntityTypeMapping TypeName="GSBCR.modele.TYPE_PRATICIEN">
+              <MappingFragment StoreEntitySet="TYPE_PRATICIEN">
+                <ScalarProperty Name="TYP_CODE" ColumnName="TYP_CODE" />
+                <ScalarProperty Name="TYP_LIBELLE" ColumnName="TYP_LIBELLE" />
+                <ScalarProperty Name="TYP_LIEU" ColumnName="TYP_LIEU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VISITEUR">
+            <EntityTypeMapping TypeName="GSBCR.modele.VISITEUR">
+              <MappingFragment StoreEntitySet="VISITEUR">
+                <ScalarProperty Name="VIS_MATRICULE" ColumnName="VIS_MATRICULE" />
+                <ScalarProperty Name="VIS_NOM" ColumnName="VIS_NOM" />
+                <ScalarProperty Name="Vis_PRENOM" ColumnName="Vis_PRENOM" />
+                <ScalarProperty Name="VIS_ADRESSE" ColumnName="VIS_ADRESSE" />
+                <ScalarProperty Name="VIS_CP" ColumnName="VIS_CP" />
+                <ScalarProperty Name="VIS_VILLE" ColumnName="VIS_VILLE" />
+                <ScalarProperty Name="VIS_DATEEMBAUCHE" ColumnName="VIS_DATEEMBAUCHE" />
+                <ScalarProperty Name="SEC_CODE" ColumnName="SEC_CODE" />
+                <ScalarProperty Name="LAB_CODE" ColumnName="LAB_CODE" />
+                <ScalarProperty Name="vis_mdp" ColumnName="vis_mdp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VAFFECTATION">
+            <EntityTypeMapping TypeName="GSBCR.modele.VAFFECTATION">
+              <MappingFragment StoreEntitySet="VAFFECTATION">
+                <ScalarProperty Name="VIS_MATRICULE" ColumnName="VIS_MATRICULE" />
+                <ScalarProperty Name="JJMMAA" ColumnName="JJMMAA" />
+                <ScalarProperty Name="REG_CODE" ColumnName="REG_CODE" />
+                <ScalarProperty Name="TRA_ROLE" ColumnName="TRA_ROLE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="addRapport" FunctionName="GSBCR.modele.Store.addRapport" />
+          <FunctionImportMapping FunctionImportName="updRapport" FunctionName="GSBCR.modele.Store.updRapport" />
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="GSBCR.modele.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="GSBCR.modele.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="GSBCR.modele.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="GSBCR.modele.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GSBCR.modele.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="GSBCR.modele.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GSBCR.modele.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="GSBCR.modele.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="GSBCR.modele.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

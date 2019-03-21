@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GSBCR.DAL.FamilleDAO">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FamilleDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GSBCR.DAL.MedicamentDAO">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAQAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MedicamentDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GSBCR.DAL.MotifVisiteDAO">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MotifVisiteDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GSBCR.DAL.PratricienDAO">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAABAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>PratricienDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GSBCR.DAL.RapportVisiteDAO">
+    <Position X="2.25" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAABAAAAAAAAAAAAAAAABAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>RapportVisiteDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GSBCR.DAL.RegionDAO">
+    <Position X="4.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RegionDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GSBCR.DAL.TypePraticienDAO">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TypePraticienDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GSBCR.DAL.VisiteurDAO">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>VisiteurDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
