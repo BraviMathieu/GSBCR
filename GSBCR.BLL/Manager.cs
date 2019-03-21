@@ -99,12 +99,17 @@ namespace GSBCR.BLL
         public static List<RAPPORT_VISITE> ChargerRapportRegionNonLus(String code)
         {
             //A faire : charger les rapports terminés et non lus (état = 2 ) des visiteurs d'une région
+            List<VISITEUR> rv = new List<VISITEUR>();
             List<RAPPORT_VISITE> lr;
-            List<VISITEUR> vis = ChargerVisiteurByRegion(code);
+            List<String> str = new List<String>();
+            rv = ChargerVisiteurByRegion(r);
             List<int> le = new List<int>();
             le.Add(2);
-
-            lr = RapportVisiteDAO.FindByEtatEtVisiteur(vis, le);
+            foreach (VISITEUR visi in rv)
+            {
+                str.Add(visi.VIS_MATRICULE);
+            }
+            lr = RapportVisiteDAO.FindByEtatEtVisiteur(str, le);
             return lr;
         }
         /// Permet de charger les rapports terminés et consultés (état 3) des visiteurs d'une région 
@@ -114,8 +119,18 @@ namespace GSBCR.BLL
         public static List<RAPPORT_VISITE> ChargerRapportRegionLus(String r)
         {
             //A faire : charger les rapports terminés (état = 3) des visiteurs d'une région
-
-            return null;
+            List<VISITEUR> rv = new List<VISITEUR>();
+            List<RAPPORT_VISITE> lr;
+            List<String> str = new List<String>();
+            rv = ChargerVisiteurByRegion(r);
+            List<int> le = new List<int>();
+            le.Add(3);
+            foreach(VISITEUR visi in rv)
+            {
+                str.Add(visi.VIS_MATRICULE);
+            }
+            lr = RapportVisiteDAO.FindByEtatEtVisiteur(str, le);
+            return lr;
         }
         /// <summary>
         /// Permet de créer un rapport dans la base de données 
@@ -133,7 +148,6 @@ namespace GSBCR.BLL
         public static void MajRapport(RAPPORT_VISITE r)
         {
             RapportVisiteDAO.update(r);
-           
         }
         /// <summary>
         /// Permet de charger un médicament à partir de son nom de dépot légal
@@ -157,7 +171,8 @@ namespace GSBCR.BLL
         /// </summary>
         public static List<MOTIF_VISITE> ChargerMotifVisites()
         {
-            return null;
+            List<MOTIF_VISITE> mv = MotifVisiteDAO.FindAll();
+            return mv;
         }
         /// <summary>
         /// Permet de charger tous les praticiens
@@ -165,7 +180,6 @@ namespace GSBCR.BLL
         public static List<PRATICIEN> ChargerPraticiens()
         {
             List<PRATICIEN> pr = PratricienDAO.FindAll();
-
             return pr;
         }
         /// <summary>
