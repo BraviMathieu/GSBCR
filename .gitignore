@@ -242,4 +242,4 @@ ModelManifest.xml
 .fake/
 
 # Configuration
-.config
+GSBCR.UI/app.config
