@@ -153,7 +153,8 @@ namespace GSBCR.BLL
         /// </summary>
         public static List<MOTIF_VISITE> ChargerMotifVisites()
         {
-            return null;
+            List<MOTIF_VISITE> lm = MedicamentDAO.FindAll();
+            return lm;
         }
         /// <summary>
         /// Permet de charger tous les praticiens
