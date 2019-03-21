@@ -92,16 +92,20 @@ namespace GSBCR.BLL
             }
             return lv;
         }
-    /// Permet de charger les rapports non consultés (état 2) des visiteurs d'une région  
-    /// </summary>
-    /// <param name="code">code région</param>
-    /// <returns>List<RAPPORT_VISITE>/returns>
-    public static List<RAPPORT_VISITE> ChargerRapportRegionNonLus(String code)
+        /// Permet de charger les rapports non consultés (état 2) des visiteurs d'une région  
+        /// </summary>
+        /// <param name="code">code région</param>
+        /// <returns>List<RAPPORT_VISITE>/returns>
+        public static List<RAPPORT_VISITE> ChargerRapportRegionNonLus(String code)
         {
             //A faire : charger les rapports terminés et non lus (état = 2 ) des visiteurs d'une région
-            List<RAPPORT_VISITE> rv = new List<RAPPORT_VISITE>();
+            List<RAPPORT_VISITE> lr;
+            List<VISITEUR> vis = ChargerVisiteurByRegion(code);
+            List<int> le = new List<int>();
+            le.Add(2);
 
-            return rv;
+            lr = RapportVisiteDAO.FindByEtatEtVisiteur(vis, le);
+            return lr;
         }
         /// Permet de charger les rapports terminés et consultés (état 3) des visiteurs d'une région 
         /// </summary>
