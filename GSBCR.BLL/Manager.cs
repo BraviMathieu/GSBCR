@@ -102,7 +102,7 @@ namespace GSBCR.BLL
             List<VISITEUR> rv = new List<VISITEUR>();
             List<RAPPORT_VISITE> lr;
             List<String> str = new List<String>();
-            rv = ChargerVisiteurByRegion(r);
+            rv = ChargerVisiteurByRegion(code);
             List<int> le = new List<int>();
             le.Add(2);
             foreach (VISITEUR visi in rv)
