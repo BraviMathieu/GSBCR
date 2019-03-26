@@ -33,6 +33,7 @@
             this.btnNouveau = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnQuitter = new System.Windows.Forms.Button();
+            this.btn_ConsulterPrat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -83,11 +84,22 @@
             this.btnQuitter.UseVisualStyleBackColor = true;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
+            // btn_ConsulterPrat
+            // 
+            this.btn_ConsulterPrat.Location = new System.Drawing.Point(154, 211);
+            this.btn_ConsulterPrat.Name = "btn_ConsulterPrat";
+            this.btn_ConsulterPrat.Size = new System.Drawing.Size(200, 23);
+            this.btn_ConsulterPrat.TabIndex = 7;
+            this.btn_ConsulterPrat.Text = "Consulter un praticien";
+            this.btn_ConsulterPrat.UseVisualStyleBackColor = true;
+            this.btn_ConsulterPrat.Click += new System.EventHandler(this.btn_ConsulterPrat_Click);
+            // 
             // FrmMenuVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(527, 411);
+            this.Controls.Add(this.btn_ConsulterPrat);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnNouveau);
@@ -108,5 +120,6 @@
         private System.Windows.Forms.Button btnNouveau;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnQuitter;
+        private System.Windows.Forms.Button btn_ConsulterPrat;
     }
 }

@@ -79,6 +79,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmConsulterPraticien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsulterPraticien.Designer.cs">
+      <DependentUpon>FrmConsulterPraticien.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMenuVisiteur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmConsulterPraticien.resx">
+      <DependentUpon>FrmConsulterPraticien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMenuVisiteur.resx">
       <DependentUpon>FrmMenuVisiteur.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +145,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GSBCR.UC\GSBCR.UC.csproj">
+      <Project>{E1D10A3B-1DCD-43BF-8E8B-9BE91F755CD3}</Project>
+      <Name>GSBCR.UC</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

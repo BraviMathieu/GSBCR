@@ -19,7 +19,7 @@ namespace GSBCR.DAL
             using (var context = new GSB_VisiteEntities())
             {
                 //context.Configuration.LazyLoadingEnabled = false;
-                var req = from m in context.MOTIF_VISITE.Include("LesRapports")
+                var req = from m in context.MOTIF_VISITE
                           where m.MOT_CODE == code
                           select m;
                 mot = req.SingleOrDefault<MOTIF_VISITE>();
@@ -34,7 +34,7 @@ namespace GSBCR.DAL
             using (var context = new GSB_VisiteEntities())
             {
                 //context.Configuration.LazyLoadingEnabled = false;
-                var req = from f in context.MOTIF_VISITE.Include("LesRapports")
+                var req = from f in context.MOTIF_VISITE
                           select f;
                 mots = req.ToList<MOTIF_VISITE>();
             }

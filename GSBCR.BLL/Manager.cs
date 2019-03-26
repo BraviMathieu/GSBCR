@@ -191,5 +191,15 @@ namespace GSBCR.BLL
             PRATICIEN pr = PratricienDAO.FindById(pranum);
             return pr;
         }
+        /// <summary>
+        /// Permet de charger les rapports d'un visiteur pour un praticien donné
+        /// <param name="visiteurcode">chaine de caracteres</param>
+        /// <param name="praticiencode">entier</param>
+        /// </summary>
+        public static List<RAPPORT_VISITE> ChargerSiRapportsExistent(string visiteurcode, Int16 praticiencode)
+        {
+            List<RAPPORT_VISITE> pr = RapportVisiteDAO.FindRapportExiste(visiteurcode, praticiencode);
+            return pr;
+        }
     }
 }
