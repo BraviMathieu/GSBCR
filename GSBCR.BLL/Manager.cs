@@ -36,6 +36,7 @@ namespace GSBCR.BLL
             VAFFECTATION vaff = VaffectationDAO.FindByMatricule(matricule);
             return vaff;
         }
+        ///<summary>
         /// Permet de charger les rapports non terminés du visiteur (état 1)
         /// </summary>
         /// <param name="m">matricule Visiteur</param>
@@ -48,6 +49,18 @@ namespace GSBCR.BLL
             List<int> le = new List<int>();
             le.Add(1);
             lr = RapportVisiteDAO.FindByEtatEtVisiteur(lm, le);
+            return lr;
+        }
+        /// <summary>
+        /// Permet de charger la liste des rapport en cours
+        /// </summary>
+        /// <returns></returns>
+        public static List<RAPPORT_VISITE> ChargerRapportVisiteursEncours(int e)
+        {
+            List<RAPPORT_VISITE> lr;
+            List<int> le = new List<int>();
+            le.Add(1);
+            lr = RapportVisiteDAO.FindByEtat(le);
             return lr;
         }
         /// Permet de charger un rapport de visite

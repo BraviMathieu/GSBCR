@@ -73,7 +73,33 @@ namespace GSBCR.DAL
             } 
             return lesRapports;
         }
+        /// <summary>
+        /// Permet de créer une liste avec tout les rapport selon leur état
+        /// </summary>
+        /// <param name="lesEtats">Liste d'états (int)</param>
+        /// <returns></returns>
+        public static List<RAPPORT_VISITE> FindByEtat(List<int> lesEtats)
+        {
+            List<RAPPORT_VISITE> lesRapports = null;
+            using (var context = new GSB_VisiteEntities())
+            {
+                int i = 0;
+            string reqStr = "select * from RAPPORT_VISITE r where r.RAP_ETAT in(";
+ 
+            foreach (int e in lesEtats)
+            {
+                if (i != 0)
+                    reqStr += ",";
+                else
+                    i++;
+                reqStr += e;
+            }
+            reqStr += ")";
+            lesRapports = context.RAPPORT_VISITE.SqlQuery(reqStr).ToList<RAPPORT_VISITE>();
 
+        } 
+            return lesRapports;
+        }
         /// <summary>
         /// Permet de créer un rapport dans la base de données par appel de la procédure stockée addRapport
         /// </summary>
