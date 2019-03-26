@@ -18,7 +18,7 @@ namespace GSBCR.DAL
             using (var context = new GSB_VisiteEntities())
             {
                 //context.Configuration.LazyLoadingEnabled = false;
-                var req = from p in context.PRATICIEN.Include("LeType")
+                var req = from p in context.PRATICIEN
                           where p.PRA_NUM == pranum
                           select p;
                 pa = req.SingleOrDefault<PRATICIEN>();
@@ -33,7 +33,7 @@ namespace GSBCR.DAL
             using (var context = new GSB_VisiteEntities())
             {
                 //context.Configuration.LazyLoadingEnabled = false;
-                var req = from p in context.PRATICIEN.Include("LeType")
+                var req = from p in context.PRATICIEN
                           select p;
                 prats = req.ToList<PRATICIEN>();
             }

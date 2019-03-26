@@ -19,7 +19,7 @@ namespace GSBCR.DAL
             using (var context = new GSB_VisiteEntities())
             {
                 //context.Configuration.LazyLoadingEnabled = false;
-                var req = from t in context.TYPE_PRATICIEN.Include("LesPraticiens")
+                var req = from t in context.TYPE_PRATICIEN
                           where t.TYP_CODE == code
                           select t;
                 typ = req.SingleOrDefault<TYPE_PRATICIEN>();
@@ -34,7 +34,7 @@ namespace GSBCR.DAL
             using (var context = new GSB_VisiteEntities())
             {
                 //context.Configuration.LazyLoadingEnabled = false;
-                var req = from t in context.TYPE_PRATICIEN.Include("LesPraticiens")
+                var req = from t in context.TYPE_PRATICIEN
                           select t;
                 typs = req.ToList<TYPE_PRATICIEN>();
             }

@@ -32,7 +32,6 @@ namespace GSBCR.DAL
                 
             }
             return rv;
-
         }
         /// <summary>
         /// Permet de créer une liste avec tous les rapports de visite de visiteurs qui ont un certain état
@@ -146,7 +145,26 @@ namespace GSBCR.DAL
                 
             }
         }
-
+        /// <summary>
+        /// Permet de retourner un rapport de visite si le visiteur en a pour un praticien
+        /// </summary>
+        /// <param name="visiteurcode">matricule Visiteur</param>
+        /// <param name="praticiencode">matricule praticien</param>
+        /// <returns>RAPPORT_VISITE</returns>
+        public static List<RAPPORT_VISITE> FindRapportExiste(string visiteurcode, Int16 praticiencode)
+        {
+            List<RAPPORT_VISITE> rv = null;
+            // écrire et exécuter la requête Linq
+            using (var context = new GSB_VisiteEntities())
+            {
+                //context.Configuration.LazyLoadingEnabled = false;
+                var req = from r in context.RAPPORT_VISITE
+                          where r.RAP_MATRICULE == visiteurcode && r.RAP_PRANUM == praticiencode
+                          select r;
+                rv = req.ToList<RAPPORT_VISITE>();
+            }
+            return rv;
+        }
 
     }
 }

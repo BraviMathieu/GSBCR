@@ -54,5 +54,11 @@ namespace GSBCR.UI
             this.Close();
             Application.Exit();
         }
+
+        private void btn_ConsulterPrat_Click(object sender, EventArgs e)
+        {
+            FrmConsulterPraticien f = new FrmConsulterPraticien();
+            f.ShowDialog();
+        }
     }
 }
