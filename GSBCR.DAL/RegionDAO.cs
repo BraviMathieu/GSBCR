@@ -18,7 +18,7 @@ namespace GSBCR.DAL
             using (var context = new GSB_VisiteEntities())
             {
                 //context.Configuration.LazyLoadingEnabled = false;
-                var req = from r in context.REGION.Include("LeSecteur")
+                var req = from r in context.REGION
                           where r.REG_CODE == code
                           select r;
                 reg = req.SingleOrDefault<REGION>();
@@ -33,7 +33,7 @@ namespace GSBCR.DAL
             using (var context = new GSB_VisiteEntities())
             {
                 //context.Configuration.LazyLoadingEnabled = false;
-                var req = from f in context.REGION.Include("LeSecteur")
+                var req = from f in context.REGION
                           select f;
                 regs = req.ToList<REGION>();
             }
