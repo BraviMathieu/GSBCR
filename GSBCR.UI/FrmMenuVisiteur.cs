@@ -15,9 +15,13 @@ namespace GSBCR.UI
     {
         private VISITEUR leVisiteur;
         private VAFFECTATION leProfil;
+        private string UserId;
+        private string UserMdp;
         public FrmMenuVisiteur(string id, string mdp)
         {
             InitializeComponent();
+            UserId = id;
+            UserMdp = mdp;
             //le visiteur doit être passé en paramètre par le menu de connexion
             //Ici initialiser le visiteur en dur
             //visiteur
@@ -69,6 +73,12 @@ namespace GSBCR.UI
         {
             this.Close();
             Application.Exit();
+        }
+
+        private void btnVoirRapVal_Click(object sender, EventArgs e)
+        {
+            FrmVoirRapportValide f = new FrmVoirRapportValide(UserId);
+            f.Show();
         }
     }
 }
