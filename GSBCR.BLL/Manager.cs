@@ -214,5 +214,18 @@ namespace GSBCR.BLL
             List<RAPPORT_VISITE> pr = RapportVisiteDAO.FindRapportExiste(visiteurcode, praticiencode);
             return pr;
         }
+
+        public static VISITEUR Connexion(string id, string mdp)
+        {
+            VISITEUR vis = null;
+            using (var context = new GSB_VisiteEntities())
+            {
+                var req = from v in context.VISITEUR
+                          where v.VIS_MATRICULE == id && v.vis_mdp == mdp
+                          select v;
+                vis = req.SingleOrDefault();
+            }
+            return vis;
+        }
     }
 }

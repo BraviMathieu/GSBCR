@@ -61,7 +61,7 @@
     </Reference>
     <Reference Include="GSBCR.BLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\GSBCR2017_eleves\GSBCR.BLL\bin\Debug\GSBCR.BLL.dll</HintPath>
+      <HintPath>..\GSBCR.BLL\bin\Debug\GSBCR.BLL.dll</HintPath>
     </Reference>
     <Reference Include="GSBCR.modele, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

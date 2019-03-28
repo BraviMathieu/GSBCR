@@ -78,6 +78,7 @@
             this.txtMdp.Name = "txtMdp";
             this.txtMdp.Size = new System.Drawing.Size(109, 20);
             this.txtMdp.TabIndex = 4;
+            this.txtMdp.UseSystemPasswordChar = true;
             // 
             // btnSeConnecter
             // 
@@ -87,6 +88,7 @@
             this.btnSeConnecter.TabIndex = 5;
             this.btnSeConnecter.Text = "Se connecter";
             this.btnSeConnecter.UseVisualStyleBackColor = true;
+            this.btnSeConnecter.Click += new System.EventHandler(this.btnSeConnecter_Click);
             // 
             // FrmConnexion
             // 
@@ -101,6 +103,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "FrmConnexion";
             this.Text = "FrmConnexion";
+            this.Click += new System.EventHandler(this.btnSeConnecter_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

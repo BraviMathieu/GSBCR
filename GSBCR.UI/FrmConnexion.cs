@@ -26,13 +26,7 @@ namespace GSBCR.UI
             VISITEUR vis = null;
             string id = txtId.Text;
             string mdp = txtMdp.Text;
-            using (var context = new GSB_VisiteEntities())
-            {
-                var req = from v in context.VISITEUR
-                          where v.VIS_MATRICULE == id && v.vis_mdp == mdp
-                          select v;
-                vis = req.SingleOrDefault();
-            }
+            vis = Manager.Connexion(txtId.Text, txtMdp.Text);
             if (vis != null)
             {
                 this.Hide();
