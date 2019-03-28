@@ -32,7 +32,6 @@ namespace GSBCR.UI
             {
                 MessageBox.Show(ex.GetBaseException().Message);
             }
-            
         }
 
         private void FrmMenuVisiteur_Load(object sender, EventArgs e)

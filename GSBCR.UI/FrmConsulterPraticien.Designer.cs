@@ -29,20 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ucPraticien1 = new GSBCR.UC.UcPraticien();
             this.cbxPraticien = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bsPraticien = new System.Windows.Forms.BindingSource(this.components);
+            this.ucPraticien1 = new GSBCR.UC.UcPraticien();
             ((System.ComponentModel.ISupportInitialize)(this.bsPraticien)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ucPraticien1
-            // 
-            this.ucPraticien1.LePraticien = null;
-            this.ucPraticien1.Location = new System.Drawing.Point(18, 49);
-            this.ucPraticien1.Name = "ucPraticien1";
-            this.ucPraticien1.Size = new System.Drawing.Size(714, 464);
-            this.ucPraticien1.TabIndex = 0;
             // 
             // cbxPraticien
             // 
@@ -62,14 +54,22 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Praticien";
             // 
+            // ucPraticien1
+            // 
+            this.ucPraticien1.LePraticien = null;
+            this.ucPraticien1.Location = new System.Drawing.Point(18, 49);
+            this.ucPraticien1.Name = "ucPraticien1";
+            this.ucPraticien1.Size = new System.Drawing.Size(714, 464);
+            this.ucPraticien1.TabIndex = 3;
+            // 
             // FrmConsulterPraticien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 535);
+            this.Controls.Add(this.ucPraticien1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxPraticien);
-            this.Controls.Add(this.ucPraticien1);
             this.Name = "FrmConsulterPraticien";
             this.Text = "FrmConsulterPraticien";
             this.Load += new System.EventHandler(this.FrmConsulterPraticien_Load);
@@ -81,9 +81,9 @@
 
         #endregion
 
-        private UC.UcPraticien ucPraticien1 = null;
         private System.Windows.Forms.ComboBox cbxPraticien;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource bsPraticien;
+        private UC.UcPraticien ucPraticien1;
     }
 }
