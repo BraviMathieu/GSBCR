@@ -225,8 +225,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtNUM;
         private System.Windows.Forms.TextBox txtNOM;
         private System.Windows.Forms.TextBox txtPRENOM;
         private System.Windows.Forms.TextBox txtADRESSE;
@@ -243,6 +241,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtCODE;
+        public System.Windows.Forms.TextBox txtNUM;
+        public System.Windows.Forms.TextBox txtCODE;
     }
 }

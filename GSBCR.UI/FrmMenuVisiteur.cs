@@ -80,5 +80,11 @@ namespace GSBCR.UI
             FrmVoirRapportValide f = new FrmVoirRapportValide(UserId);
             f.Show();
         }
+
+        private void btnConsPra_Click(object sender, EventArgs e)
+        {
+            FrmConsulterPraticien f = new FrmConsulterPraticien(UserId);
+            f.ShowDialog();
+        }
     }
 }
