@@ -186,7 +186,7 @@
             // checkBoxSaisieDef
             // 
             this.checkBoxSaisieDef.AutoSize = true;
-            this.checkBoxSaisieDef.Location = new System.Drawing.Point(200, 340);
+            this.checkBoxSaisieDef.Location = new System.Drawing.Point(208, 361);
             this.checkBoxSaisieDef.Name = "checkBoxSaisieDef";
             this.checkBoxSaisieDef.Size = new System.Drawing.Size(97, 17);
             this.checkBoxSaisieDef.TabIndex = 16;

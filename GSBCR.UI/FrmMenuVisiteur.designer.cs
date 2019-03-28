@@ -163,6 +163,7 @@
             this.btnConsPra.TabIndex = 14;
             this.btnConsPra.Text = "Consulter un praticien";
             this.btnConsPra.UseVisualStyleBackColor = true;
+            this.btnConsPra.Click += new System.EventHandler(this.btnConsPra_Click);
             // 
             // btnConsMed
             // 

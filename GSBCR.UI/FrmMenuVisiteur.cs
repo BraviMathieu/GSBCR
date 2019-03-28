@@ -70,5 +70,11 @@ namespace GSBCR.UI
             this.Close();
             Application.Exit();
         }
+
+        private void btnConsPra_Click(object sender, EventArgs e)
+        {
+            FrmConsulterPraticien f = new FrmConsulterPraticien();
+            f.ShowDialog();
+        }
     }
 }
