@@ -15,9 +15,13 @@ namespace GSBCR.UI
     {
         private VISITEUR leVisiteur;
         private VAFFECTATION leProfil;
+        private string UserId;
+        private string UserMdp;
         public FrmMenuVisiteur(string id, string mdp)
         {
             InitializeComponent();
+            UserId = id;
+            UserMdp = mdp;
             //le visiteur doit être passé en paramètre par le menu de connexion
             //Ici initialiser le visiteur en dur
             //visiteur
@@ -71,10 +75,10 @@ namespace GSBCR.UI
             Application.Exit();
         }
 
-        private void btnConsPra_Click(object sender, EventArgs e)
+        private void btnVoirRapVal_Click(object sender, EventArgs e)
         {
-            FrmConsulterPraticien f = new FrmConsulterPraticien();
-            f.ShowDialog();
+            FrmVoirRapportValide f = new FrmVoirRapportValide(UserId);
+            f.Show();
         }
     }
 }

@@ -109,6 +109,7 @@
             this.btnVoirRapVal.TabIndex = 8;
             this.btnVoirRapVal.Text = "Voir ses rapports validés";
             this.btnVoirRapVal.UseVisualStyleBackColor = true;
+            this.btnVoirRapVal.Click += new System.EventHandler(this.btnVoirRapVal_Click);
             // 
             // btnVoirNouvRap
             // 
