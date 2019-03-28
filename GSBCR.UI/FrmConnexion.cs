@@ -33,7 +33,7 @@ namespace GSBCR.UI
                           select v;
                 vis = req.SingleOrDefault();
             }
-            if(vis != null)
+            if (vis != null)
             {
                 this.Hide();
                 FrmMenuVisiteur obj = new FrmMenuVisiteur(id, mdp);

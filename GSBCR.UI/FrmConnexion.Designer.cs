@@ -40,7 +40,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GSBCR.UI.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(49, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(43, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(191, 122);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -50,16 +50,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 168);
+            this.label1.Location = new System.Drawing.Point(40, 165);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "ID utilisateur";
+            this.label1.Text = "ID Utilisateur";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 215);
+            this.label2.Location = new System.Drawing.Point(40, 201);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 2;
@@ -67,34 +67,32 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(115, 165);
+            this.txtId.Location = new System.Drawing.Point(124, 162);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(133, 20);
+            this.txtId.Size = new System.Drawing.Size(109, 20);
             this.txtId.TabIndex = 3;
             // 
             // txtMdp
             // 
-            this.txtMdp.Location = new System.Drawing.Point(115, 212);
+            this.txtMdp.Location = new System.Drawing.Point(124, 198);
             this.txtMdp.Name = "txtMdp";
-            this.txtMdp.Size = new System.Drawing.Size(133, 20);
+            this.txtMdp.Size = new System.Drawing.Size(109, 20);
             this.txtMdp.TabIndex = 4;
-            this.txtMdp.UseSystemPasswordChar = true;
             // 
             // btnSeConnecter
             // 
-            this.btnSeConnecter.Location = new System.Drawing.Point(75, 260);
+            this.btnSeConnecter.Location = new System.Drawing.Point(74, 242);
             this.btnSeConnecter.Name = "btnSeConnecter";
-            this.btnSeConnecter.Size = new System.Drawing.Size(137, 23);
+            this.btnSeConnecter.Size = new System.Drawing.Size(120, 23);
             this.btnSeConnecter.TabIndex = 5;
             this.btnSeConnecter.Text = "Se connecter";
             this.btnSeConnecter.UseVisualStyleBackColor = true;
-            this.btnSeConnecter.Click += new System.EventHandler(this.btnSeConnecter_Click);
             // 
             // FrmConnexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 309);
+            this.ClientSize = new System.Drawing.Size(277, 283);
             this.Controls.Add(this.btnSeConnecter);
             this.Controls.Add(this.txtMdp);
             this.Controls.Add(this.txtId);
