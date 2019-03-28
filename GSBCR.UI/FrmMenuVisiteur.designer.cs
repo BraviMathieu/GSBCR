@@ -38,6 +38,10 @@
             this.btnVoirNouvRap = new System.Windows.Forms.Button();
             this.btnVoirVisEq = new System.Windows.Forms.Button();
             this.btnGererVisDel = new System.Windows.Forms.Button();
+            this.btnMdp = new System.Windows.Forms.Button();
+            this.btnInfoPers = new System.Windows.Forms.Button();
+            this.btnConsPra = new System.Windows.Forms.Button();
+            this.btnConsMed = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -61,7 +65,7 @@
             // 
             // btnNouveau
             // 
-            this.btnNouveau.Location = new System.Drawing.Point(154, 122);
+            this.btnNouveau.Location = new System.Drawing.Point(161, 138);
             this.btnNouveau.Name = "btnNouveau";
             this.btnNouveau.Size = new System.Drawing.Size(200, 23);
             this.btnNouveau.TabIndex = 2;
@@ -80,9 +84,9 @@
             // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(154, 333);
+            this.btnQuitter.Location = new System.Drawing.Point(423, 390);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(200, 23);
+            this.btnQuitter.Size = new System.Drawing.Size(92, 23);
             this.btnQuitter.TabIndex = 6;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = true;
@@ -90,7 +94,7 @@
             // 
             // btnModifier
             // 
-            this.btnModifier.Location = new System.Drawing.Point(154, 151);
+            this.btnModifier.Location = new System.Drawing.Point(161, 167);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(200, 23);
             this.btnModifier.TabIndex = 7;
@@ -99,7 +103,7 @@
             // 
             // btnVoirRapVal
             // 
-            this.btnVoirRapVal.Location = new System.Drawing.Point(154, 180);
+            this.btnVoirRapVal.Location = new System.Drawing.Point(161, 196);
             this.btnVoirRapVal.Name = "btnVoirRapVal";
             this.btnVoirRapVal.Size = new System.Drawing.Size(200, 23);
             this.btnVoirRapVal.TabIndex = 8;
@@ -108,7 +112,7 @@
             // 
             // btnVoirNouvRap
             // 
-            this.btnVoirNouvRap.Location = new System.Drawing.Point(154, 209);
+            this.btnVoirNouvRap.Location = new System.Drawing.Point(161, 235);
             this.btnVoirNouvRap.Name = "btnVoirNouvRap";
             this.btnVoirNouvRap.Size = new System.Drawing.Size(200, 23);
             this.btnVoirNouvRap.TabIndex = 9;
@@ -117,7 +121,7 @@
             // 
             // btnVoirVisEq
             // 
-            this.btnVoirVisEq.Location = new System.Drawing.Point(154, 238);
+            this.btnVoirVisEq.Location = new System.Drawing.Point(161, 264);
             this.btnVoirVisEq.Name = "btnVoirVisEq";
             this.btnVoirVisEq.Size = new System.Drawing.Size(200, 23);
             this.btnVoirVisEq.TabIndex = 10;
@@ -126,18 +130,58 @@
             // 
             // btnGererVisDel
             // 
-            this.btnGererVisDel.Location = new System.Drawing.Point(154, 267);
+            this.btnGererVisDel.Location = new System.Drawing.Point(161, 306);
             this.btnGererVisDel.Name = "btnGererVisDel";
             this.btnGererVisDel.Size = new System.Drawing.Size(200, 23);
             this.btnGererVisDel.TabIndex = 11;
             this.btnGererVisDel.Text = "Gérer les visiteurs et les délégués";
             this.btnGererVisDel.UseVisualStyleBackColor = true;
             // 
+            // btnMdp
+            // 
+            this.btnMdp.Location = new System.Drawing.Point(12, 390);
+            this.btnMdp.Name = "btnMdp";
+            this.btnMdp.Size = new System.Drawing.Size(175, 23);
+            this.btnMdp.TabIndex = 12;
+            this.btnMdp.Text = "Changer mon mot de passe";
+            this.btnMdp.UseVisualStyleBackColor = true;
+            // 
+            // btnInfoPers
+            // 
+            this.btnInfoPers.Location = new System.Drawing.Point(12, 361);
+            this.btnInfoPers.Name = "btnInfoPers";
+            this.btnInfoPers.Size = new System.Drawing.Size(175, 23);
+            this.btnInfoPers.TabIndex = 13;
+            this.btnInfoPers.Text = "Modifier mes infos personnelles";
+            this.btnInfoPers.UseVisualStyleBackColor = true;
+            // 
+            // btnConsPra
+            // 
+            this.btnConsPra.Location = new System.Drawing.Point(315, 91);
+            this.btnConsPra.Name = "btnConsPra";
+            this.btnConsPra.Size = new System.Drawing.Size(200, 23);
+            this.btnConsPra.TabIndex = 14;
+            this.btnConsPra.Text = "Consulter un praticien";
+            this.btnConsPra.UseVisualStyleBackColor = true;
+            // 
+            // btnConsMed
+            // 
+            this.btnConsMed.Location = new System.Drawing.Point(12, 91);
+            this.btnConsMed.Name = "btnConsMed";
+            this.btnConsMed.Size = new System.Drawing.Size(200, 23);
+            this.btnConsMed.TabIndex = 15;
+            this.btnConsMed.Text = "Consulter un médicament";
+            this.btnConsMed.UseVisualStyleBackColor = true;
+            // 
             // FrmMenuVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 411);
+            this.ClientSize = new System.Drawing.Size(527, 424);
+            this.Controls.Add(this.btnConsMed);
+            this.Controls.Add(this.btnConsPra);
+            this.Controls.Add(this.btnInfoPers);
+            this.Controls.Add(this.btnMdp);
             this.Controls.Add(this.btnGererVisDel);
             this.Controls.Add(this.btnVoirVisEq);
             this.Controls.Add(this.btnVoirNouvRap);
@@ -168,5 +212,9 @@
         private System.Windows.Forms.Button btnVoirNouvRap;
         private System.Windows.Forms.Button btnVoirVisEq;
         private System.Windows.Forms.Button btnGererVisDel;
+        private System.Windows.Forms.Button btnMdp;
+        private System.Windows.Forms.Button btnInfoPers;
+        private System.Windows.Forms.Button btnConsPra;
+        private System.Windows.Forms.Button btnConsMed;
     }
 }

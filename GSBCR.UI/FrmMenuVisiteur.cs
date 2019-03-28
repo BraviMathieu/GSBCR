@@ -32,6 +32,23 @@ namespace GSBCR.UI
             {
                 MessageBox.Show(ex.GetBaseException().Message);
             }
+            if (leProfil.TRA_ROLE == "Visiteur")
+            {
+                btnVoirNouvRap.Hide();
+                btnVoirVisEq.Hide();
+                btnGererVisDel.Hide();
+            }
+            else if(leProfil.TRA_ROLE == "Délégué")
+            {
+                btnGererVisDel.Hide();
+            }
+            else if(leProfil.TRA_ROLE == "Responsable")
+            {
+                btnNouveau.Hide();
+                btnModifier.Hide();
+                btnVoirRapVal.Hide();
+                btnVoirNouvRap.Hide();
+            }
         }
 
         private void FrmMenuVisiteur_Load(object sender, EventArgs e)
