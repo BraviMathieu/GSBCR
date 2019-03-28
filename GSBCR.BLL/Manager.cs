@@ -215,6 +215,11 @@ namespace GSBCR.BLL
             return pr;
         }
 
+        /// <summary>
+        /// Permet de charger le visiteur pour un mot de passe et un id donné
+        /// <param name="id">chaine de caracteres</param>
+        /// <param name="mdp">chaine de caracteres</param>
+        /// </summary>
         public static VISITEUR Connexion(string id, string mdp)
         {
             VISITEUR vis = null;
@@ -227,5 +232,16 @@ namespace GSBCR.BLL
             }
             return vis;
         }
+
+        /// <summary>
+        /// Permet de charger le type praticien a partir du code
+        /// <param name="code">chaine de caracteres</param>
+        /// </summary>
+        public static TYPE_PRATICIEN ChargerTypeParticien(string code)
+        {
+            TYPE_PRATICIEN tr = TypePraticienDAO.FindById(code);
+            return tr;
+        }
+
     }
 }
