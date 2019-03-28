@@ -31,6 +31,7 @@ namespace GSBCR.UI
                 ucPraticien1.Visible = true;
                 List<RAPPORT_VISITE> a;
                 //a = Manager.ChargerSiExitent();
+
             }
         }
 

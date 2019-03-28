@@ -21,7 +21,6 @@ namespace GSBCR.UI
             cbxRapport.DataSource = bsRapports;
             cbxRapport.DisplayMember = "RAP_NUM";
         }
-
         private void cbxRapport_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
