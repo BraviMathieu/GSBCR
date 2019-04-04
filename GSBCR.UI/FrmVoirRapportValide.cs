@@ -32,6 +32,11 @@ namespace GSBCR.UI
                 ucRapportValide1.Visible = true;
                 List<RAPPORT_VISITE> v;
                 v = Manager.ChargerRapportVisiteurFinis(matricule);
+                if (v == null)
+                {
+                    MessageBox.Show("Il n'y a aucun rapport de visite.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                }
             }
         }
 
