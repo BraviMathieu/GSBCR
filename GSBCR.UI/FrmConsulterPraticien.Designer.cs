@@ -35,10 +35,10 @@
             this.btn_voirRapport = new System.Windows.Forms.Button();
             this.tbxType = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.ucPraticien1 = new GSBCR.UC.UcPraticien();
             this.label3 = new System.Windows.Forms.Label();
             this.tbxLieu = new System.Windows.Forms.TextBox();
             this.panelPraticien = new System.Windows.Forms.Panel();
+            this.ucPraticien1 = new GSBCR.UC.UcPraticien();
             ((System.ComponentModel.ISupportInitialize)(this.bsPraticien)).BeginInit();
             this.panelPraticien.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +63,7 @@
             // 
             // btn_voirRapport
             // 
-            this.btn_voirRapport.Location = new System.Drawing.Point(560, 49);
+            this.btn_voirRapport.Location = new System.Drawing.Point(561, 39);
             this.btn_voirRapport.Name = "btn_voirRapport";
             this.btn_voirRapport.Size = new System.Drawing.Size(144, 65);
             this.btn_voirRapport.TabIndex = 4;
@@ -87,14 +87,6 @@
             this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Type";
-            // 
-            // ucPraticien1
-            // 
-            this.ucPraticien1.LePraticien = null;
-            this.ucPraticien1.Location = new System.Drawing.Point(18, 49);
-            this.ucPraticien1.Name = "ucPraticien1";
-            this.ucPraticien1.Size = new System.Drawing.Size(714, 464);
-            this.ucPraticien1.TabIndex = 3;
             // 
             // label3
             // 
@@ -123,6 +115,14 @@
             this.panelPraticien.Size = new System.Drawing.Size(200, 100);
             this.panelPraticien.TabIndex = 9;
             this.panelPraticien.Visible = false;
+            // 
+            // ucPraticien1
+            // 
+            this.ucPraticien1.LePraticien = null;
+            this.ucPraticien1.Location = new System.Drawing.Point(18, 49);
+            this.ucPraticien1.Name = "ucPraticien1";
+            this.ucPraticien1.Size = new System.Drawing.Size(714, 464);
+            this.ucPraticien1.TabIndex = 3;
             // 
             // FrmConsulterPraticien
             // 

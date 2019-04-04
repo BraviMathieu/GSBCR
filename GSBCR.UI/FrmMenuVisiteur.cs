@@ -71,7 +71,6 @@ namespace GSBCR.UI
 
         private void btnQuitter_Click(object sender, EventArgs e)
         {
-            this.Close();
             Application.Exit();
         }
 

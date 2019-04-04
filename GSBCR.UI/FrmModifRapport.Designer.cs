@@ -54,7 +54,7 @@
             // cbxRapport
             // 
             this.cbxRapport.FormattingEnabled = true;
-            this.cbxRapport.Location = new System.Drawing.Point(223, 21);
+            this.cbxRapport.Location = new System.Drawing.Point(255, 25);
             this.cbxRapport.Name = "cbxRapport";
             this.cbxRapport.Size = new System.Drawing.Size(121, 21);
             this.cbxRapport.TabIndex = 0;
@@ -63,15 +63,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(124, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.Size = new System.Drawing.Size(131, 18);
             this.label1.TabIndex = 1;
-            this.label1.Text = "rapports en cours";
+            this.label1.Text = "Rapports en cours";
             // 
             // txtBoxNumRapport
             // 
-            this.txtBoxNumRapport.Location = new System.Drawing.Point(105, 73);
+            this.txtBoxNumRapport.Location = new System.Drawing.Point(149, 77);
             this.txtBoxNumRapport.Name = "txtBoxNumRapport";
             this.txtBoxNumRapport.Size = new System.Drawing.Size(100, 20);
             this.txtBoxNumRapport.TabIndex = 2;
@@ -79,24 +80,26 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(10, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 13);
+            this.label2.Size = new System.Drawing.Size(133, 18);
             this.label2.TabIndex = 3;
-            this.label2.Text = "numero de rapport";
+            this.label2.Text = "Numero de rapport";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(10, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 13);
+            this.label3.Size = new System.Drawing.Size(111, 18);
             this.label3.TabIndex = 4;
-            this.label3.Text = "code practicien";
+            this.label3.Text = "Code practicien";
             // 
             // txtBoxCodePra
             // 
-            this.txtBoxCodePra.Location = new System.Drawing.Point(105, 112);
+            this.txtBoxCodePra.Location = new System.Drawing.Point(124, 113);
             this.txtBoxCodePra.Name = "txtBoxCodePra";
             this.txtBoxCodePra.Size = new System.Drawing.Size(100, 20);
             this.txtBoxCodePra.TabIndex = 5;
@@ -104,11 +107,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 157);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 151);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 13);
+            this.label4.Size = new System.Drawing.Size(39, 18);
             this.label4.TabIndex = 6;
-            this.label4.Text = "date";
+            this.label4.Text = "Date";
             // 
             // dateRapport
             // 
@@ -120,11 +124,12 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(10, 196);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.Size = new System.Drawing.Size(78, 18);
             this.label5.TabIndex = 8;
-            this.label5.Text = "motif visite";
+            this.label5.Text = "Motif visite";
             // 
             // cbxMotif
             // 
@@ -144,20 +149,22 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(299, 196);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(301, 192);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.Size = new System.Drawing.Size(56, 18);
             this.label6.TabIndex = 11;
             this.label6.Text = "si autre";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(10, 260);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 13);
+            this.label7.Size = new System.Drawing.Size(85, 18);
             this.label7.TabIndex = 12;
-            this.label7.Text = "etat rapport";
+            this.label7.Text = "Etat rapport";
             // 
             // txtBoxEtatRapport
             // 
@@ -169,9 +176,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(299, 263);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(263, 262);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 13);
+            this.label8.Size = new System.Drawing.Size(129, 18);
             this.label8.TabIndex = 14;
             this.label8.Text = "Code Medicament";
             // 
@@ -186,9 +194,10 @@
             // checkBoxSaisieDef
             // 
             this.checkBoxSaisieDef.AutoSize = true;
+            this.checkBoxSaisieDef.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxSaisieDef.Location = new System.Drawing.Point(208, 361);
             this.checkBoxSaisieDef.Name = "checkBoxSaisieDef";
-            this.checkBoxSaisieDef.Size = new System.Drawing.Size(97, 17);
+            this.checkBoxSaisieDef.Size = new System.Drawing.Size(125, 22);
             this.checkBoxSaisieDef.TabIndex = 16;
             this.checkBoxSaisieDef.Text = "saisie définitive";
             this.checkBoxSaisieDef.UseVisualStyleBackColor = true;
