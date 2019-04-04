@@ -92,6 +92,7 @@
             // 
             // FrmConnexion
             // 
+            this.AcceptButton = this.btnSeConnecter;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(277, 283);
@@ -103,7 +104,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "FrmConnexion";
             this.Text = "FrmConnexion";
-            this.Click += new System.EventHandler(this.btnSeConnecter_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
