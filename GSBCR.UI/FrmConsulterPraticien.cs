@@ -60,7 +60,11 @@ namespace GSBCR.UI
 
         private void btn_voirRapport_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("test");
+            Int16 matricule = Int16.Parse(ucPraticien1.txtNUM.Text.ToString());
+
+            FrmDetailRapport f = new FrmDetailRapport(UserId, matricule);
+            f.ShowDialog();
+
         }
     }
 }
