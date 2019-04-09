@@ -107,6 +107,18 @@
     <Compile Include="FrmSaisir.designer.cs">
       <DependentUpon>FrmSaisir.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUnMedicamment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUnMedicamment.Designer.cs">
+      <DependentUpon>FrmUnMedicamment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUnPracticien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUnPracticien.Designer.cs">
+      <DependentUpon>FrmUnPracticien.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVoirRapportValide.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +144,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSaisir.resx">
       <DependentUpon>FrmSaisir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUnMedicamment.resx">
+      <DependentUpon>FrmUnMedicamment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUnPracticien.resx">
+      <DependentUpon>FrmUnPracticien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVoirRapportValide.resx">
       <DependentUpon>FrmVoirRapportValide.cs</DependentUpon>

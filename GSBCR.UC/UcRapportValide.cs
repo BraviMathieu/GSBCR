@@ -32,13 +32,21 @@ namespace GSBCR.UC
         }
         private void voirrapval_actualiser()
         {
+            listCodeMed.Items.Clear();
             txtBoxNumRapport.Text = Convert.ToString(leRapportVisite.RAP_NUM);
-            txtBoxCodePra.Text = leRapportVisite.RAP_MATRICULE;
+            txtBoxCodePra.Text = Convert.ToString(leRapportVisite.RAP_PRANUM);
             txtBoxDate.Text = Convert.ToString(leRapportVisite.RAP_DATE);
             txtBoxMotif.Text = leRapportVisite.RAP_MOTIF;
             txtBoxAutreMotif.Text = leRapportVisite.RAP_MOTIFAUTRE;
             txtBoxEtatRapport.Text = leRapportVisite.RAP_ETAT;
-            txtBoxCodeMed.Text = leRapportVisite.RAP_MED1 + Environment.NewLine + leRapportVisite.RAP_MED2;
+            if(leRapportVisite.RAP_MED1 != null)
+            {
+                listCodeMed.Items.Add(leRapportVisite.RAP_MED1);
+            }
+            if (leRapportVisite.RAP_MED2 != null)
+            {
+                listCodeMed.Items.Add(leRapportVisite.RAP_MED2);
+            }
         }
     }
 }

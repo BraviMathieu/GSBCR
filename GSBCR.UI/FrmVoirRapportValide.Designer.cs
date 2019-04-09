@@ -31,8 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxRapport = new System.Windows.Forms.ComboBox();
-            this.bsRapports = new System.Windows.Forms.BindingSource(this.components);
             this.btnRetour = new System.Windows.Forms.Button();
+            this.btnAfficherPracticien = new System.Windows.Forms.Button();
+            this.bsRapports = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAfficherMed1 = new System.Windows.Forms.Button();
+            this.btnAfficherMed2 = new System.Windows.Forms.Button();
             this.ucRapportValide1 = new GSBCR.UC.UcRapportValide();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapports)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +68,36 @@
             this.btnRetour.UseVisualStyleBackColor = true;
             this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
             // 
+            // btnAfficherPracticien
+            // 
+            this.btnAfficherPracticien.Location = new System.Drawing.Point(250, 86);
+            this.btnAfficherPracticien.Name = "btnAfficherPracticien";
+            this.btnAfficherPracticien.Size = new System.Drawing.Size(147, 37);
+            this.btnAfficherPracticien.TabIndex = 37;
+            this.btnAfficherPracticien.Text = "Afficher les renseignements sur le practicien";
+            this.btnAfficherPracticien.UseVisualStyleBackColor = true;
+            this.btnAfficherPracticien.Click += new System.EventHandler(this.btnAfficherPracticien_Click);
+            // 
+            // btnAfficherMed1
+            // 
+            this.btnAfficherMed1.Location = new System.Drawing.Point(508, 227);
+            this.btnAfficherMed1.Name = "btnAfficherMed1";
+            this.btnAfficherMed1.Size = new System.Drawing.Size(144, 37);
+            this.btnAfficherMed1.TabIndex = 38;
+            this.btnAfficherMed1.Text = "Afficher les renseignements sur le medicament 1";
+            this.btnAfficherMed1.UseVisualStyleBackColor = true;
+            this.btnAfficherMed1.Click += new System.EventHandler(this.btnAfficherMed1_Click);
+            // 
+            // btnAfficherMed2
+            // 
+            this.btnAfficherMed2.Location = new System.Drawing.Point(508, 270);
+            this.btnAfficherMed2.Name = "btnAfficherMed2";
+            this.btnAfficherMed2.Size = new System.Drawing.Size(144, 37);
+            this.btnAfficherMed2.TabIndex = 39;
+            this.btnAfficherMed2.Text = "Afficher les renseignements sur le medicament 2";
+            this.btnAfficherMed2.UseVisualStyleBackColor = true;
+            this.btnAfficherMed2.Click += new System.EventHandler(this.btnAfficherMed2_Click);
+            // 
             // ucRapportValide1
             // 
             this.ucRapportValide1.LeRapportVisite = null;
@@ -77,7 +110,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 333);
+            this.ClientSize = new System.Drawing.Size(684, 333);
+            this.Controls.Add(this.btnAfficherMed2);
+            this.Controls.Add(this.btnAfficherMed1);
+            this.Controls.Add(this.btnAfficherPracticien);
             this.Controls.Add(this.ucRapportValide1);
             this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.label1);
@@ -96,5 +132,8 @@
         private System.Windows.Forms.BindingSource bsRapports;
         private System.Windows.Forms.Button btnRetour;
         private UC.UcRapportValide ucRapportValide1;
+        private System.Windows.Forms.Button btnAfficherPracticien;
+        private System.Windows.Forms.Button btnAfficherMed1;
+        private System.Windows.Forms.Button btnAfficherMed2;
     }
 }

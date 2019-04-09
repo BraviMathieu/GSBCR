@@ -77,7 +77,6 @@ namespace GSBCR.UI
         private void btnVoirRapVal_Click(object sender, EventArgs e)
         {
             FrmVoirRapportValide f = new FrmVoirRapportValide(UserId);
-            f.ShowDialog();
         }
 
         private void btnConsPra_Click(object sender, EventArgs e)

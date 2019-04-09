@@ -30,7 +30,6 @@
         {
             this.txtBoxMotif = new System.Windows.Forms.TextBox();
             this.txtBoxDate = new System.Windows.Forms.TextBox();
-            this.txtBoxCodeMed = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtBoxEtatRapport = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBoxNumRapport = new System.Windows.Forms.TextBox();
+            this.listCodeMed = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // txtBoxMotif
@@ -59,15 +59,6 @@
             this.txtBoxDate.ReadOnly = true;
             this.txtBoxDate.Size = new System.Drawing.Size(121, 20);
             this.txtBoxDate.TabIndex = 50;
-            // 
-            // txtBoxCodeMed
-            // 
-            this.txtBoxCodeMed.Location = new System.Drawing.Point(368, 212);
-            this.txtBoxCodeMed.Multiline = true;
-            this.txtBoxCodeMed.Name = "txtBoxCodeMed";
-            this.txtBoxCodeMed.ReadOnly = true;
-            this.txtBoxCodeMed.Size = new System.Drawing.Size(195, 34);
-            this.txtBoxCodeMed.TabIndex = 49;
             // 
             // label8
             // 
@@ -132,7 +123,7 @@
             // 
             // txtBoxCodePra
             // 
-            this.txtBoxCodePra.Location = new System.Drawing.Point(119, 64);
+            this.txtBoxCodePra.Location = new System.Drawing.Point(119, 61);
             this.txtBoxCodePra.Name = "txtBoxCodePra";
             this.txtBoxCodePra.ReadOnly = true;
             this.txtBoxCodePra.Size = new System.Drawing.Size(100, 20);
@@ -143,9 +134,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(24, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 13);
+            this.label3.Size = new System.Drawing.Size(94, 13);
             this.label3.TabIndex = 40;
-            this.label3.Text = "Code Practicien";
+            this.label3.Text = "Numéro Practicien";
             // 
             // label2
             // 
@@ -164,13 +155,21 @@
             this.txtBoxNumRapport.Size = new System.Drawing.Size(100, 20);
             this.txtBoxNumRapport.TabIndex = 38;
             // 
+            // listCodeMed
+            // 
+            this.listCodeMed.FormattingEnabled = true;
+            this.listCodeMed.Location = new System.Drawing.Point(368, 215);
+            this.listCodeMed.Name = "listCodeMed";
+            this.listCodeMed.Size = new System.Drawing.Size(120, 30);
+            this.listCodeMed.TabIndex = 52;
+            // 
             // UcRapportValide
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.listCodeMed);
             this.Controls.Add(this.txtBoxMotif);
             this.Controls.Add(this.txtBoxDate);
-            this.Controls.Add(this.txtBoxCodeMed);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtBoxEtatRapport);
             this.Controls.Add(this.label7);
@@ -183,7 +182,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBoxNumRapport);
             this.Name = "UcRapportValide";
-            this.Size = new System.Drawing.Size(589, 269);
+            this.Size = new System.Drawing.Size(589, 273);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,7 +192,6 @@
 
         private System.Windows.Forms.TextBox txtBoxMotif;
         private System.Windows.Forms.TextBox txtBoxDate;
-        private System.Windows.Forms.TextBox txtBoxCodeMed;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtBoxEtatRapport;
         private System.Windows.Forms.Label label7;
@@ -201,9 +199,10 @@
         private System.Windows.Forms.TextBox txtBoxAutreMotif;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtBoxCodePra;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBoxNumRapport;
+        public System.Windows.Forms.ListBox listCodeMed;
+        public System.Windows.Forms.TextBox txtBoxCodePra;
     }
 }
