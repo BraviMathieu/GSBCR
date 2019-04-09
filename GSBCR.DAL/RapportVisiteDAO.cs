@@ -72,6 +72,7 @@ namespace GSBCR.DAL
             } 
             return lesRapports;
         }
+
         /// <summary>
         /// Permet de créer une liste avec tout les rapport selon leur état
         /// </summary>
@@ -146,7 +147,7 @@ namespace GSBCR.DAL
             }
         }
         /// <summary>
-        /// Permet de retourner un rapport de visite si le visiteur en a pour un praticien
+        /// Permet de retourner des rapports de visite si le visiteur en a pour un praticien
         /// </summary>
         /// <param name="visiteurcode">matricule Visiteur</param>
         /// <param name="praticiencode">matricule praticien</param>

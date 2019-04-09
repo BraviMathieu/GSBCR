@@ -78,6 +78,7 @@
             this.txtMdp.Name = "txtMdp";
             this.txtMdp.Size = new System.Drawing.Size(109, 20);
             this.txtMdp.TabIndex = 4;
+            this.txtMdp.UseSystemPasswordChar = true;
             // 
             // btnSeConnecter
             // 
@@ -87,9 +88,11 @@
             this.btnSeConnecter.TabIndex = 5;
             this.btnSeConnecter.Text = "Se connecter";
             this.btnSeConnecter.UseVisualStyleBackColor = true;
+            this.btnSeConnecter.Click += new System.EventHandler(this.btnSeConnecter_Click);
             // 
             // FrmConnexion
             // 
+            this.AcceptButton = this.btnSeConnecter;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(277, 283);

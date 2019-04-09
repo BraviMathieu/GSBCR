@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmChangerMdp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChangerMdp.Designer.cs">
+      <DependentUpon>FrmChangerMdp.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,12 @@
     </Compile>
     <Compile Include="FrmConsulterPraticien.Designer.cs">
       <DependentUpon>FrmConsulterPraticien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDetailRapport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDetailRapport.Designer.cs">
+      <DependentUpon>FrmDetailRapport.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMenuVisiteur.cs">
       <SubType>Form</SubType>
@@ -101,13 +113,43 @@
     <Compile Include="FrmSaisir.designer.cs">
       <DependentUpon>FrmSaisir.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUnMedicamment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUnMedicamment.Designer.cs">
+      <DependentUpon>FrmUnMedicamment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUnPracticien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUnPracticien.Designer.cs">
+      <DependentUpon>FrmUnPracticien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVisiteurEquipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisiteurEquipe.Designer.cs">
+      <DependentUpon>FrmVisiteurEquipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVoirRapportValide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVoirRapportValide.Designer.cs">
+      <DependentUpon>FrmVoirRapportValide.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmChangerMdp.resx">
+      <DependentUpon>FrmChangerMdp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmConnexion.resx">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsulterPraticien.resx">
       <DependentUpon>FrmConsulterPraticien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDetailRapport.resx">
+      <DependentUpon>FrmDetailRapport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMenuVisiteur.resx">
       <DependentUpon>FrmMenuVisiteur.cs</DependentUpon>
@@ -117,6 +159,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSaisir.resx">
       <DependentUpon>FrmSaisir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUnMedicamment.resx">
+      <DependentUpon>FrmUnMedicamment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUnPracticien.resx">
+      <DependentUpon>FrmUnPracticien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVisiteurEquipe.resx">
+      <DependentUpon>FrmVisiteurEquipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVoirRapportValide.resx">
+      <DependentUpon>FrmVoirRapportValide.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

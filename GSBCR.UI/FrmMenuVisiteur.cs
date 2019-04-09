@@ -15,9 +15,13 @@ namespace GSBCR.UI
     {
         private VISITEUR leVisiteur;
         private VAFFECTATION leProfil;
+        private string UserId;
+        private string UserMdp;
         public FrmMenuVisiteur(string id, string mdp)
         {
             InitializeComponent();
+            UserId = id;
+            UserMdp = mdp;
             //le visiteur doit être passé en paramètre par le menu de connexion
             //Ici initialiser le visiteur en dur
             //visiteur
@@ -31,6 +35,23 @@ namespace GSBCR.UI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.GetBaseException().Message);
+            }
+            if (leProfil.TRA_ROLE == "Visiteur")
+            {
+                btnVoirNouvRap.Hide();
+                btnVoirVisEq.Hide();
+                btnGererVisDel.Hide();
+            }
+            else if(leProfil.TRA_ROLE == "Délégué")
+            {
+                btnGererVisDel.Hide();
+            }
+            else if(leProfil.TRA_ROLE == "Responsable")
+            {
+                btnNouveau.Hide();
+                btnModifier.Hide();
+                btnVoirRapVal.Hide();
+                btnVoirNouvRap.Hide();
             }
         }
 
@@ -50,8 +71,30 @@ namespace GSBCR.UI
 
         private void btnQuitter_Click(object sender, EventArgs e)
         {
-            this.Close();
             Application.Exit();
+        }
+
+        private void btnVoirRapVal_Click(object sender, EventArgs e)
+        {
+            FrmVoirRapportValide f = new FrmVoirRapportValide(UserId);
+        }
+
+        private void btnConsPra_Click(object sender, EventArgs e)
+        {
+            FrmConsulterPraticien f = new FrmConsulterPraticien(UserId);
+            f.ShowDialog();
+        }
+
+        private void btnMdp_Click(object sender, EventArgs e)
+        {
+            FrmChangerMdp f = new FrmChangerMdp(UserId);
+            f.ShowDialog();
+        }
+
+        private void btnVoirVisEq_Click(object sender, EventArgs e)
+        {
+            FrmVisiteurEquipe f = new FrmVisiteurEquipe(UserId);
+            f.ShowDialog();
         }
     }
 }

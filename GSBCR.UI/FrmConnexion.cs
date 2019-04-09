@@ -26,7 +26,7 @@ namespace GSBCR.UI
             VISITEUR vis = null;
             string id = txtId.Text;
             string mdp = txtMdp.Text;
-            
+            vis = Manager.ChargerVisiteur(txtId.Text, txtMdp.Text);
             if (vis != null)
             {
                 this.Hide();
