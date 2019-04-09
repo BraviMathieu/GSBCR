@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GSBCR.BLL">
+      <HintPath>D:\SIO\visual Studio\GSBCR\GSBCR.BLL\bin\Debug\GSBCR.BLL.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -66,10 +69,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GSBCR.DAL\GSBCR.DAL.csproj">
-      <Project>{065145a2-f3ec-4edc-b31f-758c137a92e8}</Project>
-      <Name>GSBCR.DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GSBCR.modele\GSBCR.modele.csproj">
       <Project>{d480ec3f-6939-4a26-88d5-aac2769f9f12}</Project>
       <Name>GSBCR.modele</Name>
