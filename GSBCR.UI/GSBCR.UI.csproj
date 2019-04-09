@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmChangerMdp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChangerMdp.Designer.cs">
+      <DependentUpon>FrmChangerMdp.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,12 @@
     <Compile Include="FrmUnPracticien.Designer.cs">
       <DependentUpon>FrmUnPracticien.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVisiteurEquipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisiteurEquipe.Designer.cs">
+      <DependentUpon>FrmVisiteurEquipe.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVoirRapportValide.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +139,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmChangerMdp.resx">
+      <DependentUpon>FrmChangerMdp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmConnexion.resx">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUnPracticien.resx">
       <DependentUpon>FrmUnPracticien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVisiteurEquipe.resx">
+      <DependentUpon>FrmVisiteurEquipe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVoirRapportValide.resx">
       <DependentUpon>FrmVoirRapportValide.cs</DependentUpon>

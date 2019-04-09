@@ -13,7 +13,7 @@ namespace GSBCR.DAL
     public static class VisiteurDAO
     {
         /// <summary>
-        /// Permet de retrouver les infos d'un visiteur à partir de son login et mot de passe
+        /// Permet de retrouver les infos d'un visiteur à partir de son login
         /// </summary>
         /// <param name="matricule">matricule Visiteur</param>
         /// <returns>VISITEUR</returns>
@@ -31,6 +31,20 @@ namespace GSBCR.DAL
             }
             return vis;
         }
-              
+
+        public static List<VISITEUR> FindBySecteur(string secteur)
+        {
+            List<VISITEUR> vis = null;
+            using (var context = new GSB_VisiteEntities())
+            {
+                //context.Configuration.LazyLoadingEnabled = false;
+                var req = from v in context.VISITEUR
+                          where v.SEC_CODE == secteur
+                          select v;
+                vis = req.ToList<VISITEUR>();
+            }
+            return vis;
+        }
+
     }
 }
