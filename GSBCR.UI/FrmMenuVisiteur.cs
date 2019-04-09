@@ -85,5 +85,17 @@ namespace GSBCR.UI
             FrmConsulterPraticien f = new FrmConsulterPraticien(UserId);
             f.ShowDialog();
         }
+
+        private void btnMdp_Click(object sender, EventArgs e)
+        {
+            FrmChangerMdp f = new FrmChangerMdp(UserId);
+            f.ShowDialog();
+        }
+
+        private void btnVoirVisEq_Click(object sender, EventArgs e)
+        {
+            FrmVisiteurEquipe f = new FrmVisiteurEquipe(UserId);
+            f.ShowDialog();
+        }
     }
 }

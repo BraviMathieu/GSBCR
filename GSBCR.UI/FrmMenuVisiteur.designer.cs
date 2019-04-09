@@ -128,6 +128,7 @@
             this.btnVoirVisEq.TabIndex = 10;
             this.btnVoirVisEq.Text = "Voir les visiteurs de son équipe";
             this.btnVoirVisEq.UseVisualStyleBackColor = true;
+            this.btnVoirVisEq.Click += new System.EventHandler(this.btnVoirVisEq_Click);
             // 
             // btnGererVisDel
             // 
@@ -146,6 +147,7 @@
             this.btnMdp.TabIndex = 12;
             this.btnMdp.Text = "Changer mon mot de passe";
             this.btnMdp.UseVisualStyleBackColor = true;
+            this.btnMdp.Click += new System.EventHandler(this.btnMdp_Click);
             // 
             // btnInfoPers
             // 

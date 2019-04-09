@@ -89,7 +89,7 @@ namespace GSBCR.BLL
             return lr;
         }
         /// <summary>
-        /// Permet de retourner une liste de visiteurs pour un région à partir de vaffectation
+        /// Permet de retourner une liste de visiteurs pour une région à partir de vaffectation
         /// </summary>
         /// <param name="regionCode">code région</param>
         /// <returns>List<VISITEUR></returns>
@@ -105,6 +105,19 @@ namespace GSBCR.BLL
             }
             return lv;
         }
+
+        /// <summary>
+        /// Permet de retourner une liste de visiteurs pour un secteur
+        /// </summary>
+        /// <param name="secteurCode">code secteur</param>
+        /// <returns>List<VISITEUR></returns>
+        public static List<VISITEUR> ChargerVisiteurBySecteur(string secteurCode)
+        {
+            List<VISITEUR> lv = new List<VISITEUR>();
+            lv = VisiteurDAO.FindBySecteur(secteurCode);
+            return lv;
+        }
+
         /// Permet de charger les rapports non consultés (état 2) des visiteurs d'une région  
         /// </summary>
         /// <param name="code">code région</param>
@@ -216,17 +229,16 @@ namespace GSBCR.BLL
         }
 
         /// <summary>
-        /// Permet de charger le visiteur pour un mot de passe et un id donné
+        /// Permet de charger le visiteur pour un id donné
         /// <param name="id">chaine de caracteres</param>
-        /// <param name="mdp">chaine de caracteres</param>
         /// </summary>
-        public static VISITEUR Connexion(string id, string mdp)
+        public static VISITEUR ChargerVisiteurById(string id)
         {
             VISITEUR vis = null;
             using (var context = new GSB_VisiteEntities())
             {
                 var req = from v in context.VISITEUR
-                          where v.VIS_MATRICULE == id && v.vis_mdp == mdp
+                          where v.VIS_MATRICULE == id
                           select v;
                 vis = req.SingleOrDefault();
             }

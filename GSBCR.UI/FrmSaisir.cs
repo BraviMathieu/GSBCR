@@ -125,42 +125,94 @@ namespace GSBCR.UI
             {
                 ajout = false;
             }
-                      
-            r.RAP_DATVISIT = dtDateVisite.Value;
-            r.RAP_MOTIF = cbxMotif.SelectedValue.ToString();
-            r.RAP_MOTIFAUTRE = txtAutre.Text;
-            r.RAP_CONFIANCE = nupCoef.Value.ToString();
-            r.RAP_PRANUM= Convert.ToInt16(cbxNomPraticien.SelectedValue);
-            r.RAP_BILAN = txtBilan.Text;
-            r.RAP_MED1 = txtMed1.Text;
-            r.RAP_MED2 = txtMed2.Text;
-            if (chbDefinitif.Checked)
-                r.RAP_ETAT = "2";
-            else
-                r.RAP_ETAT = "1";
-            try
+
+            if (chbDefinitif.Checked && (String.IsNullOrEmpty(txtNumPraticien.Text) || String.IsNullOrEmpty(dtDateVisite.Text) || String.IsNullOrEmpty(txtCodeMotif.Text) || String.IsNullOrEmpty(txtBilan.Text) || nupCoef.Equals("")))
             {
-                if (ajout)
+                string phrase ="";
+                if (String.IsNullOrEmpty(txtNumPraticien.Text))
+                    phrase += ", numéro praticien";
+
+                if (String.IsNullOrEmpty(dtDateVisite.Text))
+                    phrase += ", date visite";
+
+                if (String.IsNullOrEmpty(txtCodeMotif.Text))
+                    phrase += ", motif";
+
+                if (String.IsNullOrEmpty(txtBilan.Text))
+                    phrase += ", bilan";
+
+                if (nupCoef.Equals(""))
+                    phrase += ", numero de coef";
+
+                MessageBox.Show("Il manque "+phrase, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                if(cbxMotif.Text.Equals("Autre"))
                 {
-                    Manager.CreateRapport(r);
-                    txtNum.Text = r.RAP_NUM.ToString();
+                    if(String.IsNullOrEmpty(txtAutre.Text))
+                    {
+                        MessageBox.Show("Veuillez saisir le motif autre", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                /*      if(!chbDefinitif.Checked)
+                      {
+
+                      }
+                      else
+                      {*/
+                r.RAP_DATVISIT = dtDateVisite.Value;
+                r.RAP_MOTIF = cbxMotif.SelectedValue.ToString();
+                r.RAP_MOTIFAUTRE = txtAutre.Text;
+                r.RAP_CONFIANCE = nupCoef.Value.ToString();
+                r.RAP_PRANUM = Convert.ToInt16(cbxNomPraticien.SelectedValue);
+                r.RAP_BILAN = txtBilan.Text;
+
+                if(String.IsNullOrEmpty(txtMed1.Text))
+                {
+                    r.RAP_MED1 = null;
                 }
                 else
                 {
-                    Manager.MajRapport(r);
+                    r.RAP_MED1 = txtMed1.Text;
+                }
+                if (String.IsNullOrEmpty(txtMed2.Text))
+                {
+                    r.RAP_MED2 = null;
+                }
+                else
+                {
+                    r.RAP_MED2 = txtMed2.Text;
                 }
 
-                MessageBox.Show("Rapport de visite n° " + r.RAP_NUM + " enregistré", "Mise à Jour des données", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.DialogResult = System.Windows.Forms.DialogResult.OK;
-                this.Close();
-            }
-            catch (Exception ex)
-            {
+                if (chbDefinitif.Checked)
+                        r.RAP_ETAT = "2";
+                    else
+                        r.RAP_ETAT = "1";
+                    try
+                    {
+                        if (ajout)
+                        {
+                            Manager.CreateRapport(r);
+                            txtNum.Text = r.RAP_NUM.ToString();
+                        }
+                        else
+                        {
+                            Manager.MajRapport(r);
+                        }
 
-                MessageBox.Show("Abandon traitement : " + ex.GetBaseException().Message, "Erreur base de données", MessageBoxButtons.OK, MessageBoxIcon.Error);
-           } 
-                      
-            btnValider.Enabled = true;
+                        MessageBox.Show("Rapport de visite n° " + r.RAP_NUM + " enregistré", "Mise à Jour des données", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Abandon traitement : " + ex.GetBaseException().Message, "Erreur base de données", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    btnValider.Enabled = true;
+                }
+            //}
         }
 
         private void cbxNomPraticien_SelectedIndexChanged(object sender, EventArgs e)

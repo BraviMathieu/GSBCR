@@ -22,10 +22,5 @@ namespace GSBCR.UI
             this.matricule = matricule;
             bsDetailRapport.DataSource = Manager.ChargerSiRapportsExistent(UserId, matricule);
         }
-
-        private void FrmDetailRapport_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

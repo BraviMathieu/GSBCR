@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.bsDetailRapport = new System.Windows.Forms.BindingSource(this.components);
             this.RAP_NUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RAP_DATVISIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RAP_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RAP_BILAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RAP_MOTIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsDetailRapport = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsDetailRapport)).BeginInit();
             this.SuspendLayout();
@@ -56,16 +56,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(666, 282);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(294, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Rapport de visite";
             // 
             // RAP_NUM
             // 
@@ -97,6 +87,16 @@
             this.RAP_MOTIF.HeaderText = "Motif";
             this.RAP_MOTIF.Name = "RAP_MOTIF";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(294, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Rapport de visite";
+            // 
             // FrmDetailRapport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -106,7 +106,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmDetailRapport";
             this.Text = "FrmDetailRapport";
-            this.Load += new System.EventHandler(this.FrmDetailRapport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsDetailRapport)).EndInit();
             this.ResumeLayout(false);
