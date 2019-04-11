@@ -189,20 +189,19 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtBoxMotif;
-        private System.Windows.Forms.TextBox txtBoxDate;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtBoxEtatRapport;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtBoxAutreMotif;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtBoxNumRapport;
         public System.Windows.Forms.ListBox listCodeMed;
         public System.Windows.Forms.TextBox txtBoxCodePra;
+        public System.Windows.Forms.TextBox txtBoxMotif;
+        public System.Windows.Forms.TextBox txtBoxDate;
+        public System.Windows.Forms.TextBox txtBoxEtatRapport;
+        public System.Windows.Forms.TextBox txtBoxAutreMotif;
+        public System.Windows.Forms.TextBox txtBoxNumRapport;
     }
 }

@@ -20,6 +20,8 @@ namespace GSBCR.UI
         /// <param name="maj">code maj</param>
         /// <returns></returns>
         private RAPPORT_VISITE r;
+        int compteur = 0;
+        List<RAPPORT_VISITE> lr = new List<RAPPORT_VISITE>();
         //maj = vrai si création/modification
         //maj = faux si consultation
         public FrmSaisir(RAPPORT_VISITE r, bool maj)
@@ -65,9 +67,17 @@ namespace GSBCR.UI
             {
                 btnValider.Enabled = false;
                 btnValider.Visible = false;
+                cbxRapport.Visible = false;
+                lblRapport.Visible = false;
                 lblTitre.Text = "Consultation d'un rapport";
             }
-                       
+
+            lr = Manager.ChargerRapportVisiteurEncours(r.RAP_MATRICULE);
+            cbxRapport.DataSource = lr;
+            cbxRapport.DisplayMember = "RAP_NUM";
+            cbxRapport.ValueMember = "RAP_NUM";
+            this.compteur = lr.Count;
+            
         }
 
         private void InitRapport()
@@ -199,7 +209,8 @@ namespace GSBCR.UI
                         }
                         else
                         {
-                            Manager.MajRapport(r);
+                         r.RAP_NUM= Convert.ToInt16(txtNum.Text);
+                        Manager.MajRapport(r);
                         }
 
                         MessageBox.Show("Rapport de visite n° " + r.RAP_NUM + " enregistré", "Mise à Jour des données", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -261,8 +272,12 @@ namespace GSBCR.UI
         {
             if (cbxMed2.SelectedIndex != -1)
             {
-                txtMed2.Text = cbxMed2.SelectedValue.ToString();
-                btnVoirMed2.Enabled = true;
+                if (cbxRapport.Items.Count==compteur)
+                {
+                   // txtMed2.Text = Convert.ToString(cbxRapport.Items[cbxMed2.SelectedIndex]);
+                    btnVoirMed2.Enabled = true;
+                }
+                
             }
             else
             {
@@ -285,6 +300,65 @@ namespace GSBCR.UI
         private void btnVoirMed2_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void cbxRapport_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxRapport.SelectedIndex != -1)
+            {
+                txtNum.Text = Convert.ToString(cbxRapport.SelectedValue);
+            }
+            else
+                txtNum.Text = String.Empty;
+
+
+        }
+
+        private void txtNum_TextChanged(object sender, EventArgs e)
+        {
+            if (compteur==cbxRapport.Items.Count)
+            {
+                RAPPORT_VISITE rap = new RAPPORT_VISITE();
+                rap = Manager.ChargerRapportVisite(txtMatricule.Text, Convert.ToInt16(txtNum.Text));
+                if (rap!=null)
+                {
+                    dtDateVisite.Value = rap.RAP_DATVISIT;
+                    cbxNomPraticien.SelectedValue = rap.RAP_PRANUM;
+                    txtCodeMotif.Text = rap.RAP_MOTIF;
+                    nupCoef.Value = Convert.ToDecimal(rap.RAP_CONFIANCE);
+                    txtBilan.Text = rap.RAP_BILAN;
+                    txtMed1.Text = rap.RAP_MED1;
+                    if (rap.RAP_MED1 != null)
+                    {
+                        cbxMed1.SelectedValue = rap.RAP_MED1;
+                    }
+                    else
+                    {
+                        cbxMed1.SelectedIndex = -1;
+                    }
+                    if (rap.RAP_MED2 != null)
+                    {
+                        cbxMed2.SelectedValue = rap.RAP_MED2;
+                    }
+                    else
+                    {
+                        cbxMed2.SelectedIndex = -1;
+                    }
+                    txtMed2.Text = rap.RAP_MED2;
+                    cbxMotif.SelectedValue = rap.RAP_MOTIF;
+                    if (rap.RAP_MOTIF == "AU")
+                    {
+                        txtAutre.Text = rap.RAP_MOTIFAUTRE;
+                    }
+                }
+                else
+                {
+
+                }
+               
+                
+            }
+           
         }
     }
 }
