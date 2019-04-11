@@ -15,6 +15,7 @@ namespace GSBCR.UI
     public partial class FrmVisiteurEquipe : Form
     {
         private string UserId;
+        private List<RAPPORT_VISITE> Nbrapports;
         public FrmVisiteurEquipe(string UserId)
         {
             InitializeComponent();
@@ -43,7 +44,7 @@ namespace GSBCR.UI
             {
                 VAFFECTATION leProfil = Manager.ChargerAffectationVisiteur(UserId);
                 VISITEUR v = (VISITEUR)cbxVisiteurs.SelectedItem;
-                List<RAPPORT_VISITE> Nbrapports = Manager.ChargerRapportRegionLusVisiteur(leProfil.REG_CODE, v.VIS_MATRICULE);
+                Nbrapports = Manager.ChargerRapportRegionLusVisiteur(leProfil.REG_CODE, v.VIS_MATRICULE);
                 VAFFECTATION jmmaa = Manager.ChargerAffectationVisiteur(v.VIS_MATRICULE); ;
 
                 tbxMatricule.Text = v.VIS_MATRICULE;
@@ -66,7 +67,7 @@ namespace GSBCR.UI
 
         private void btnpas0_Click(object sender, EventArgs e)
         {
-            FrmConsulterRapportConsulte f = new FrmConsulterRapportConsulte();
+            FrmConsulterRapportConsulte f = new FrmConsulterRapportConsulte(Nbrapports);
             f.ShowDialog();
         }
     }
