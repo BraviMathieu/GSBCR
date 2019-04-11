@@ -19,7 +19,7 @@ namespace GSBCR.DAL
             using (var context = new GSB_VisiteEntities())
             {
                 //context.Configuration.LazyLoadingEnabled = false;
-                var req = from m in context.MEDICAMENT
+                var req = from m in context.MEDICAMENT.Include("laFamille")
                           where m.MED_DEPOTLEGAL == depot
                           select m;
                 med = req.SingleOrDefault<MEDICAMENT>();
