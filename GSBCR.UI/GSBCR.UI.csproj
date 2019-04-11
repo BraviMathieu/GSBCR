@@ -104,7 +104,7 @@
     <Compile Include="FrmModifRapport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmModifRapport.Designer.cs">
+    <Compile Include="FrmModifRapport.designer.cs">
       <DependentUpon>FrmModifRapport.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmSaisir.cs">
