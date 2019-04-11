@@ -21,5 +21,10 @@ namespace GSBCR.UI
             bsPrac.DataSource = Manager.ChargerLePraticien(pr);
             ucPraticien1.LePraticien = (PRATICIEN)bsPrac.DataSource;
         }
+
+        private void btnRetour_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

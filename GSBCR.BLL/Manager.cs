@@ -255,5 +255,32 @@ namespace GSBCR.BLL
             return tr;
         }
 
+        /// <summary>
+        /// Permet de mettre à jour le visiteur dans la base de données
+        /// <param name="mat">(matricule visiteur,</param>
+        /// <param name="adr">ancienne adresse visiteur,</param>
+        /// <param name="CP">ancien code postal visiteur,</param>
+        /// <param name="ville">ancienne ville visiteur,</param>
+        /// <param name="nadr">nouvelle adresse visiteur,</param>
+        /// <param name="nCP">nouveau code postal visiteur,</param>
+        /// <param name="nville">nouvelle ville visiteur)</param>
+        /// </summary>
+        public static void UpdateVisiteur(string mat, string adr, string CP, string ville, string nadr, string nCP, string nville)
+        {
+            using (var context = new GSB_VisiteEntities())
+            {
+                var req = context.VISITEUR.Where(m => m.VIS_MATRICULE == mat).Where(a => a.VIS_ADRESSE == adr).First();
+                req.VIS_ADRESSE = nadr;
+                context.SaveChanges();
+
+                req = context.VISITEUR.Where(m => m.VIS_MATRICULE == mat).Where(c => c.VIS_CP == CP).First();
+                req.VIS_CP = nCP;
+                context.SaveChanges();
+
+                req = context.VISITEUR.Where(m => m.VIS_MATRICULE == mat).Where(v => v.VIS_VILLE == ville).First();
+                req.VIS_VILLE = nville;
+                context.SaveChanges();
+            }
+        }
     }
 }

@@ -96,5 +96,11 @@ namespace GSBCR.UI
             FrmVisiteurEquipe f = new FrmVisiteurEquipe(UserId);
             f.ShowDialog();
         }
+
+        private void btnInfoPers_Click(object sender, EventArgs e)
+        {
+            FrmModifierInfo f = new FrmModifierInfo(UserId);
+            f.ShowDialog();
+        }
     }
 }

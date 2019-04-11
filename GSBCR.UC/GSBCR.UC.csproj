@@ -50,6 +50,12 @@
     <Compile Include="UcMedicament.Designer.cs">
       <DependentUpon>UcMedicament.cs</DependentUpon>
     </Compile>
+    <Compile Include="UcModifierInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcModifierInfo.Designer.cs">
+      <DependentUpon>UcModifierInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="UcPraticien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -66,6 +72,9 @@
   <ItemGroup>
     <EmbeddedResource Include="UcMedicament.resx">
       <DependentUpon>UcMedicament.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcModifierInfo.resx">
+      <DependentUpon>UcModifierInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UcPraticien.resx">
       <DependentUpon>UcPraticien.cs</DependentUpon>
