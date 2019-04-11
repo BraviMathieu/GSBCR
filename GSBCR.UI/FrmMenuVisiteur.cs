@@ -105,7 +105,7 @@ namespace GSBCR.UI
 
         private void btnConsMed_Click(object sender, EventArgs e)
         {
-            FrmConsulterMedicament f = new FrmConsulterMedicament();
+            FrmConsulterMedicament f = new FrmConsulterMedicament(UserId);
             f.ShowDialog();
         }
 

@@ -245,6 +245,11 @@ namespace GSBCR.BLL
             List<RAPPORT_VISITE> pr = RapportVisiteDAO.FindRapportExiste(visiteurcode, praticiencode);
             return pr;
         }
+        public static List<RAPPORT_VISITE> ChargerSiRapportsExistentMedicaments(string visiteurcode, string depotLegal)
+        {
+            List<RAPPORT_VISITE> pr = RapportVisiteDAO.FindRapportExisteMedicament(visiteurcode, depotLegal);
+            return pr;
+        }
 
         /// <summary>
         /// Permet de charger le visiteur pour un id donné

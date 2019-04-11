@@ -166,6 +166,20 @@ namespace GSBCR.DAL
             }
             return rv;
         }
+        public static List<RAPPORT_VISITE> FindRapportExisteMedicament(string visiteurcode, string depotLegal)
+        {
+            List<RAPPORT_VISITE> rv = null;
+            // écrire et exécuter la requête Linq
+            using (var context = new GSB_VisiteEntities())
+            {
+                //context.Configuration.LazyLoadingEnabled = false;
+                var req = from r in context.RAPPORT_VISITE
+                          where r.RAP_MATRICULE == visiteurcode && r.RAP_MED1== depotLegal || r.RAP_MED2 == depotLegal
+                          select r;
+                rv = req.ToList<RAPPORT_VISITE>();
+            }
+            return rv;
+        }
 
     }
 }

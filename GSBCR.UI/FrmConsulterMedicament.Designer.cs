@@ -32,13 +32,14 @@
             this.ucMedicament1 = new GSBCR.UC.UcMedicament();
             this.cbxMedicament = new System.Windows.Forms.ComboBox();
             this.bsMedicament = new System.Windows.Forms.BindingSource(this.components);
+            this.btn_voirRapport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsMedicament)).BeginInit();
             this.SuspendLayout();
             // 
             // ucMedicament1
             // 
             this.ucMedicament1.LeMedicament = null;
-            this.ucMedicament1.Location = new System.Drawing.Point(65, 15);
+            this.ucMedicament1.Location = new System.Drawing.Point(66, 37);
             this.ucMedicament1.Name = "ucMedicament1";
             this.ucMedicament1.Size = new System.Drawing.Size(664, 645);
             this.ucMedicament1.TabIndex = 0;
@@ -52,9 +53,21 @@
             this.cbxMedicament.TabIndex = 1;
             this.cbxMedicament.SelectedIndexChanged += new System.EventHandler(this.cbxMedicament_SelectedIndexChanged);
             // 
+            // btn_voirRapport
+            // 
+            this.btn_voirRapport.Location = new System.Drawing.Point(573, 66);
+            this.btn_voirRapport.Name = "btn_voirRapport";
+            this.btn_voirRapport.Size = new System.Drawing.Size(144, 65);
+            this.btn_voirRapport.TabIndex = 5;
+            this.btn_voirRapport.Text = "Voir les rapports de visite";
+            this.btn_voirRapport.UseVisualStyleBackColor = true;
+            this.btn_voirRapport.Visible = false;
+            this.btn_voirRapport.Click += new System.EventHandler(this.btn_voirRapport_Click);
+            // 
             // FrmConsulterMedicament
             // 
             this.ClientSize = new System.Drawing.Size(796, 667);
+            this.Controls.Add(this.btn_voirRapport);
             this.Controls.Add(this.cbxMedicament);
             this.Controls.Add(this.ucMedicament1);
             this.Name = "FrmConsulterMedicament";
@@ -69,5 +82,6 @@
         private UC.UcMedicament ucMedicament1;
         private System.Windows.Forms.ComboBox cbxMedicament;
         private System.Windows.Forms.BindingSource bsMedicament;
+        private System.Windows.Forms.Button btn_voirRapport;
     }
 }
