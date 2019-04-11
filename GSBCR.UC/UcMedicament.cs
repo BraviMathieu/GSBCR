@@ -38,7 +38,7 @@ namespace GSBCR.UC
             txtDepot.Text = leMedicament.MED_DEPOTLEGAL;
             txtCommercial.Text = leMedicament.MED_NOMCOMMERCIAL;
             txtCode.Text = leMedicament.FAM_CODE;
-            //txtNomFamille.Text = leMedicament.LaFamille.FAM_LIBELLE;
+            txtNomFamille.Text = leMedicament.LaFamille.FAM_LIBELLE;
             richtxtComposition.Text = leMedicament.MED_COMPOSITION;
             richtxtIndications.Text = leMedicament.MED_CONTREINDIC;
             richtxtEffets.Text = leMedicament.MED_EFFETS;

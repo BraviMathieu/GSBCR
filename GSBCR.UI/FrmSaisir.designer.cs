@@ -50,14 +50,14 @@
             this.btnQuitter = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnVoirMed2 = new System.Windows.Forms.Button();
+            this.btnVoirMed1 = new System.Windows.Forms.Button();
             this.txtMed2 = new System.Windows.Forms.TextBox();
             this.txtMed1 = new System.Windows.Forms.TextBox();
             this.cbxMed2 = new System.Windows.Forms.ComboBox();
             this.cbxMed1 = new System.Windows.Forms.ComboBox();
             this.txtMatricule = new System.Windows.Forms.TextBox();
             this.btnVoirPatricien = new System.Windows.Forms.Button();
-            this.btnVoirMed1 = new System.Windows.Forms.Button();
-            this.btnVoirMed2 = new System.Windows.Forms.Button();
             this.bsPraticien = new System.Windows.Forms.BindingSource(this.components);
             this.bsMotif = new System.Windows.Forms.BindingSource(this.components);
             this.bsMed1 = new System.Windows.Forms.BindingSource(this.components);
@@ -267,6 +267,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Médicaments présentés";
             // 
+            // btnVoirMed2
+            // 
+            this.btnVoirMed2.Location = new System.Drawing.Point(267, 49);
+            this.btnVoirMed2.Name = "btnVoirMed2";
+            this.btnVoirMed2.Size = new System.Drawing.Size(121, 23);
+            this.btnVoirMed2.TabIndex = 5;
+            this.btnVoirMed2.Text = "voir le médicament";
+            this.btnVoirMed2.UseVisualStyleBackColor = true;
+            this.btnVoirMed2.Click += new System.EventHandler(this.btnVoirMed2_Click);
+            // 
+            // btnVoirMed1
+            // 
+            this.btnVoirMed1.Location = new System.Drawing.Point(267, 17);
+            this.btnVoirMed1.Name = "btnVoirMed1";
+            this.btnVoirMed1.Size = new System.Drawing.Size(121, 23);
+            this.btnVoirMed1.TabIndex = 4;
+            this.btnVoirMed1.Text = "voir le médicament";
+            this.btnVoirMed1.UseVisualStyleBackColor = true;
+            this.btnVoirMed1.Click += new System.EventHandler(this.btnVoirmed1_Click);
+            // 
             // txtMed2
             // 
             this.txtMed2.Location = new System.Drawing.Point(153, 52);
@@ -318,26 +338,6 @@
             this.btnVoirPatricien.TabIndex = 24;
             this.btnVoirPatricien.Text = "voir le praticien";
             this.btnVoirPatricien.UseVisualStyleBackColor = true;
-            // 
-            // btnVoirMed1
-            // 
-            this.btnVoirMed1.Location = new System.Drawing.Point(267, 17);
-            this.btnVoirMed1.Name = "btnVoirMed1";
-            this.btnVoirMed1.Size = new System.Drawing.Size(121, 23);
-            this.btnVoirMed1.TabIndex = 4;
-            this.btnVoirMed1.Text = "voir le médicament";
-            this.btnVoirMed1.UseVisualStyleBackColor = true;
-            this.btnVoirMed1.Click += new System.EventHandler(this.btnVoirmed1_Click);
-            // 
-            // btnVoirMed2
-            // 
-            this.btnVoirMed2.Location = new System.Drawing.Point(267, 49);
-            this.btnVoirMed2.Name = "btnVoirMed2";
-            this.btnVoirMed2.Size = new System.Drawing.Size(121, 23);
-            this.btnVoirMed2.TabIndex = 5;
-            this.btnVoirMed2.Text = "voir le médicament";
-            this.btnVoirMed2.UseVisualStyleBackColor = true;
-            this.btnVoirMed2.Click += new System.EventHandler(this.btnVoirMed2_Click);
             // 
             // FrmSaisir
             // 

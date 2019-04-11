@@ -102,5 +102,11 @@ namespace GSBCR.UI
             FrmModifierInfo f = new FrmModifierInfo(UserId);
             f.ShowDialog();
         }
+
+        private void btnConsMed_Click(object sender, EventArgs e)
+        {
+            FrmConsulterMedicament f = new FrmConsulterMedicament();
+            f.ShowDialog();
+        }
     }
 }

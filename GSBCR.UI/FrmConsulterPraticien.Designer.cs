@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.cbxPraticien = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.bsPraticien = new System.Windows.Forms.BindingSource(this.components);
             this.btn_voirRapport = new System.Windows.Forms.Button();
             this.tbxType = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,8 +38,9 @@
             this.tbxLieu = new System.Windows.Forms.TextBox();
             this.panelPraticien = new System.Windows.Forms.Panel();
             this.ucPraticien1 = new GSBCR.UC.UcPraticien();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPraticien)).BeginInit();
+            this.bsPraticien = new System.Windows.Forms.BindingSource(this.components);
             this.panelPraticien.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPraticien)).BeginInit();
             this.SuspendLayout();
             // 
             // cbxPraticien
@@ -137,9 +137,9 @@
             this.Name = "FrmConsulterPraticien";
             this.Text = "FrmConsulterPraticien";
             this.Load += new System.EventHandler(this.FrmConsulterPraticien_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bsPraticien)).EndInit();
             this.panelPraticien.ResumeLayout(false);
             this.panelPraticien.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPraticien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

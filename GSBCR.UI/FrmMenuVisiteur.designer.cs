@@ -177,6 +177,7 @@
             this.btnConsMed.TabIndex = 15;
             this.btnConsMed.Text = "Consulter un médicament";
             this.btnConsMed.UseVisualStyleBackColor = true;
+            this.btnConsMed.Click += new System.EventHandler(this.btnConsMed_Click);
             // 
             // FrmMenuVisiteur
             // 
@@ -198,7 +199,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmMenuVisiteur";
-            this.Text = "FrmMenuVisiteur";
             this.Load += new System.EventHandler(this.FrmMenuVisiteur_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
