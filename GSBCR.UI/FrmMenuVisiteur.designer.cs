@@ -199,7 +199,9 @@
             this.Controls.Add(this.btnNouveau);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmMenuVisiteur";
+            this.Text = "Menu principal";
             this.Load += new System.EventHandler(this.FrmMenuVisiteur_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

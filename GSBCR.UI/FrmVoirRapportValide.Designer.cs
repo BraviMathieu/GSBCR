@@ -118,8 +118,9 @@
             this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxRapport);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmVoirRapportValide";
-            this.Text = "FrmVoirRapportValide";
+            this.Text = "Voir les rapports validés";
             ((System.ComponentModel.ISupportInitialize)(this.bsRapports)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

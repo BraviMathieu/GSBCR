@@ -60,8 +60,9 @@
             this.ClientSize = new System.Drawing.Size(547, 431);
             this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.ucPraticien1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmUnPracticien";
-            this.Text = "frmUnPracticien";
+            this.Text = "Consulter un praticien";
             ((System.ComponentModel.ISupportInitialize)(this.bsPrac)).EndInit();
             this.ResumeLayout(false);
 

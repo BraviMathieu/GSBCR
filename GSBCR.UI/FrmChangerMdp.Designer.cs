@@ -110,8 +110,9 @@
             this.Controls.Add(this.txt_nouveau2);
             this.Controls.Add(this.txt_nouveau);
             this.Controls.Add(this.txt_ancien);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmChangerMdp";
-            this.Text = "FrmChangerMdp";
+            this.Text = "Changer mon mot de passe";
             this.ResumeLayout(false);
             this.PerformLayout();
 

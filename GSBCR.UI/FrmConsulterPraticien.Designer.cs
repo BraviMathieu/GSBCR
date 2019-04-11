@@ -134,8 +134,9 @@
             this.Controls.Add(this.ucPraticien1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxPraticien);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmConsulterPraticien";
-            this.Text = "FrmConsulterPraticien";
+            this.Text = "Consulter un praticien";
             this.Load += new System.EventHandler(this.FrmConsulterPraticien_Load);
             this.panelPraticien.ResumeLayout(false);
             this.panelPraticien.PerformLayout();

@@ -98,7 +98,7 @@
             this.lblTitre.AutoSize = true;
             this.lblTitre.CausesValidation = false;
             this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitre.Location = new System.Drawing.Point(259, 9);
+            this.lblTitre.Location = new System.Drawing.Point(253, 9);
             this.lblTitre.Name = "lblTitre";
             this.lblTitre.Size = new System.Drawing.Size(160, 20);
             this.lblTitre.TabIndex = 2;
@@ -394,8 +394,9 @@
             this.Controls.Add(this.lblTitre);
             this.Controls.Add(this.txtNum);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmSaisir";
-            this.Text = "FrmSaisir";
+            this.Text = "Saisir un rapport";
             this.Load += new System.EventHandler(this.FrmSaisir_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nupCoef)).EndInit();
             this.groupBox1.ResumeLayout(false);

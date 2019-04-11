@@ -63,7 +63,7 @@ namespace GSBCR.UI
                 InitRapport();
             }
             dtDateVisite.Focus();
-            if (!maj)
+            if (maj)
             {
                 btnValider.Enabled = false;
                 btnValider.Visible = false;

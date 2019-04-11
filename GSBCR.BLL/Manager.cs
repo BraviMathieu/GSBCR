@@ -159,6 +159,7 @@ namespace GSBCR.BLL
             return lr;
         }
 
+
         /// Permet de charger les rapports terminés et consultés (état 3) d'un visiteur
         /// </summary>
         /// <param name="r">code région</param>
