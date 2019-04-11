@@ -119,12 +119,6 @@
     <Compile Include="FrmModifierInfo.Designer.cs">
       <DependentUpon>FrmModifierInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmModifRapport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmModifRapport.designer.cs">
-      <DependentUpon>FrmModifRapport.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmSaisir.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,9 +174,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmModifierInfo.resx">
       <DependentUpon>FrmModifierInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmModifRapport.resx">
-      <DependentUpon>FrmModifRapport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSaisir.resx">
       <DependentUpon>FrmSaisir.cs</DependentUpon>

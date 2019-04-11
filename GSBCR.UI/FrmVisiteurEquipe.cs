@@ -67,7 +67,7 @@ namespace GSBCR.UI
 
         private void btnpas0_Click(object sender, EventArgs e)
         {
-            FrmConsulterRapportConsulte f = new FrmConsulterRapportConsulte(Nbrapports);
+            FrmConsulterRapportConsulte f = new FrmConsulterRapportConsulte(Nbrapports, UserId);
             f.ShowDialog();
         }
     }

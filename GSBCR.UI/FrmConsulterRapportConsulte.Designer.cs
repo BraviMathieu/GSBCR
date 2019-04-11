@@ -38,7 +38,7 @@
             // ucRapportValide1
             // 
             this.ucRapportValide1.LeRapportVisite = null;
-            this.ucRapportValide1.Location = new System.Drawing.Point(12, 71);
+            this.ucRapportValide1.Location = new System.Drawing.Point(28, 71);
             this.ucRapportValide1.Name = "ucRapportValide1";
             this.ucRapportValide1.Size = new System.Drawing.Size(586, 273);
             this.ucRapportValide1.TabIndex = 0;
