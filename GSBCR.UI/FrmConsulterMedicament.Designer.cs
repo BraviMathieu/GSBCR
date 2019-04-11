@@ -57,7 +57,9 @@
             this.ClientSize = new System.Drawing.Size(796, 667);
             this.Controls.Add(this.cbxMedicament);
             this.Controls.Add(this.ucMedicament1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmConsulterMedicament";
+            this.Text = "Consulter un medicament";
             this.Load += new System.EventHandler(this.FrmConsulterMedicament_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsMedicament)).EndInit();
             this.ResumeLayout(false);

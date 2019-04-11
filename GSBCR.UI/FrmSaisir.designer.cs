@@ -369,8 +369,9 @@
             this.Controls.Add(this.lblTitre);
             this.Controls.Add(this.txtNum);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmSaisir";
-            this.Text = "FrmSaisir";
+            this.Text = "Saisir un rapport";
             this.Load += new System.EventHandler(this.FrmSaisir_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nupCoef)).EndInit();
             this.groupBox1.ResumeLayout(false);

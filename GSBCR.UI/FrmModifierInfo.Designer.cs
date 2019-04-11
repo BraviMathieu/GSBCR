@@ -72,8 +72,9 @@
             this.Controls.Add(this.ucModifierInfo1);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnAnnuler);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmModifierInfo";
-            this.Text = "FrmModifierInfo";
+            this.Text = "Modifier ses informations personnelles";
             ((System.ComponentModel.ISupportInitialize)(this.bsInfo)).EndInit();
             this.ResumeLayout(false);
 

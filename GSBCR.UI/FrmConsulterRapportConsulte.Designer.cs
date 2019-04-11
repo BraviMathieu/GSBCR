@@ -45,8 +45,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 356);
             this.Controls.Add(this.ucRapportValide1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmConsulterRapportConsulte";
-            this.Text = "FrmConsulterRapportConsulte";
+            this.Text = "Consulter un rapport consulté";
             this.ResumeLayout(false);
 
         }

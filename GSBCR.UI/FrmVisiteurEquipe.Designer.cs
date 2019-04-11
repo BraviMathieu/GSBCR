@@ -181,8 +181,9 @@
             this.Controls.Add(this.tbxPrenom);
             this.Controls.Add(this.tbxNom);
             this.Controls.Add(this.tbxMatricule);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmVisiteurEquipe";
-            this.Text = "FrmVisiteurEquipe";
+            this.Text = "Consulter les visiteurs de mon équipe";
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

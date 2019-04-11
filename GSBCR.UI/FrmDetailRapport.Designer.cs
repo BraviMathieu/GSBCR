@@ -104,8 +104,9 @@
             this.ClientSize = new System.Drawing.Size(690, 360);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmDetailRapport";
-            this.Text = "FrmDetailRapport";
+            this.Text = "Détail du rapport";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsDetailRapport)).EndInit();
             this.ResumeLayout(false);

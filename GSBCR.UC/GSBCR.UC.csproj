@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GSBCR.BLL">
-      <HintPath>D:\SIO\visual Studio\GSBCR\GSBCR.BLL\bin\Debug\GSBCR.BLL.dll</HintPath>
+      <HintPath>..\GSBCR.BLL\bin\Debug\GSBCR.BLL.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
