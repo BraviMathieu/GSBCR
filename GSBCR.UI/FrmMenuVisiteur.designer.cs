@@ -100,6 +100,7 @@
             this.btnModifier.TabIndex = 7;
             this.btnModifier.Text = "Modifier un rapport de visite";
             this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // btnVoirRapVal
             // 
@@ -157,6 +158,7 @@
             this.btnInfoPers.TabIndex = 13;
             this.btnInfoPers.Text = "Modifier mes infos personnelles";
             this.btnInfoPers.UseVisualStyleBackColor = true;
+            this.btnInfoPers.Click += new System.EventHandler(this.btnInfoPers_Click);
             // 
             // btnConsPra
             // 

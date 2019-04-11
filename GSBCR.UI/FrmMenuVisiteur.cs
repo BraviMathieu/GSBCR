@@ -65,7 +65,7 @@ namespace GSBCR.UI
         {
             RAPPORT_VISITE r = new RAPPORT_VISITE();
             r.RAP_MATRICULE = leVisiteur.VIS_MATRICULE;
-            FrmSaisir f = new FrmSaisir(r, true);
+            FrmSaisir f = new FrmSaisir(r, false);
             f.ShowDialog();
         }
 
@@ -97,9 +97,23 @@ namespace GSBCR.UI
             f.ShowDialog();
         }
 
+        private void btnInfoPers_Click(object sender, EventArgs e)
+        {
+            FrmModifierInfo f = new FrmModifierInfo(UserId);
+            f.ShowDialog();
+        }
+
         private void btnConsMed_Click(object sender, EventArgs e)
         {
             FrmConsulterMedicament f = new FrmConsulterMedicament();
+            f.ShowDialog();
+        }
+
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            RAPPORT_VISITE r = new RAPPORT_VISITE();
+            r.RAP_MATRICULE = leVisiteur.VIS_MATRICULE;
+            FrmSaisir f = new FrmSaisir(r, true);
             f.ShowDialog();
         }
     }

@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using GSBCR.modele;
 using GSBCR.BLL;
@@ -14,13 +13,23 @@ namespace GSBCR.UI
 {
     public partial class FrmModifRapport : Form
     {
+        /// <summary>
+        /// Consultation/création/modification d'un rapport de visite
+        /// </summary>
+        /// <param name="r">rapport de visite</param>
+        /// <param name="maj">code maj</param>
+        /// <returns></returns>
         private RAPPORT_VISITE r;
-        public FrmModifRapport()
+        //maj = vrai si création/modification
+        //maj = faux si consultation
+        public FrmModifRapport( string m)
         {
-            InitializeComponent();
-            bsRapports.DataSource = Manager.ChargerRapportVisiteurEncours("a131");
-            cbxRapport.DataSource = bsRapports;
+            List<RAPPORT_VISITE> lr = Manager.ChargerRapportVisiteurEncours("a131");
+            bsRapport.DataSource = lr;
+            cbxRapport.DataSource = bsRapport;
             cbxRapport.DisplayMember = "RAP_NUM";
+            InitializeComponent();
+            this.r = r;
             //Initialisation de la liste déroulante praticien
             List<PRATICIEN> lp = Manager.ChargerPraticiens();
             bsPraticien.DataSource = lp;
@@ -28,7 +37,7 @@ namespace GSBCR.UI
             cbxNomPraticien.DisplayMember = "PRA_NOM";
             cbxNomPraticien.ValueMember = "PRA_NUM";
             cbxNomPraticien.SelectedIndex = -1;
-
+            
             //Initialisation de la liste déroulante motif de visite
             List<MOTIF_VISITE> lmot = Manager.ChargerMotifVisites();
             bsMotif.DataSource = lmot;
@@ -48,13 +57,19 @@ namespace GSBCR.UI
             cbxMed2.DisplayMember = "MED_NOMCOMMERCIAL";
             cbxMed2.ValueMember = "MED_DEPOTLEGAL";
             cbxMed2.SelectedIndex = -1;
-            InitRapport();
-
+            txtMatricule.Text = r.RAP_MATRICULE;
             // Initialisation des contrôles du formulaire avec les valeurs du rapport de visite 
+            if (r.RAP_NUM != 0)
+            {
+                //si le rapport existe déjà, initialisation des contrôles avec les valeurs des propriétés du rapport
+                InitRapport();
+            }
+            dtDateVisite.Focus();
+                       
         }
+
         private void InitRapport()
         {
-            txtMatricule.Text = r.RAP_MATRICULE;
             txtNum.Text = r.RAP_NUM.ToString();
             dtDateVisite.Value = r.RAP_DATVISIT;
             txtNumPraticien.Text = r.RAP_PRANUM.ToString();
@@ -83,7 +98,7 @@ namespace GSBCR.UI
             else
             {
                 cbxMed1.SelectedValue = r.RAP_MED1;
-
+                
             }
             if (String.IsNullOrEmpty(r.RAP_MED2))
             {
@@ -93,14 +108,10 @@ namespace GSBCR.UI
             else
             {
                 cbxMed2.SelectedValue = r.RAP_MED2;
-
+                
             }
         }
-        private void cbxRapport_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            r = (RAPPORT_VISITE)cbxRapport.SelectedItem;
-            InitRapport();
-        }
+
         private void btnValider_Click(object sender, EventArgs e)
         {
             bool ajout;
@@ -113,41 +124,93 @@ namespace GSBCR.UI
                 ajout = false;
             }
 
-            r.RAP_DATVISIT = dtDateVisite.Value;
-            r.RAP_MOTIF = cbxMotif.SelectedValue.ToString();
-            r.RAP_MOTIFAUTRE = txtAutre.Text;
-            r.RAP_CONFIANCE = nupCoef.Value.ToString();
-            r.RAP_PRANUM = Convert.ToInt16(cbxNomPraticien.SelectedValue);
-            r.RAP_BILAN = txtBilan.Text;
-            r.RAP_MED1 = txtMed1.Text;
-            r.RAP_MED2 = txtMed2.Text;
-            if (chbDefinitif.Checked)
-                r.RAP_ETAT = "2";
-            else
-                r.RAP_ETAT = "1";
-            try
+            if (chbDefinitif.Checked && (String.IsNullOrEmpty(txtNumPraticien.Text) || String.IsNullOrEmpty(dtDateVisite.Text) || String.IsNullOrEmpty(txtCodeMotif.Text) || String.IsNullOrEmpty(txtBilan.Text) || nupCoef.Equals("")))
             {
-                if (ajout)
+                string phrase ="";
+                if (String.IsNullOrEmpty(txtNumPraticien.Text))
+                    phrase += ", numéro praticien";
+
+                if (String.IsNullOrEmpty(dtDateVisite.Text))
+                    phrase += ", date visite";
+
+                if (String.IsNullOrEmpty(txtCodeMotif.Text))
+                    phrase += ", motif";
+
+                if (String.IsNullOrEmpty(txtBilan.Text))
+                    phrase += ", bilan";
+
+                if (nupCoef.Equals(""))
+                    phrase += ", numero de coef";
+
+                MessageBox.Show("Il manque "+phrase, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                if(cbxMotif.Text.Equals("Autre"))
                 {
-                    Manager.CreateRapport(r);
-                    txtNum.Text = r.RAP_NUM.ToString();
+                    if(String.IsNullOrEmpty(txtAutre.Text))
+                    {
+                        MessageBox.Show("Veuillez saisir le motif autre", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                /*      if(!chbDefinitif.Checked)
+                      {
+
+                      }
+                      else
+                      {*/
+                r.RAP_DATVISIT = dtDateVisite.Value;
+                r.RAP_MOTIF = cbxMotif.SelectedValue.ToString();
+                r.RAP_MOTIFAUTRE = txtAutre.Text;
+                r.RAP_CONFIANCE = nupCoef.Value.ToString();
+                r.RAP_PRANUM = Convert.ToInt16(cbxNomPraticien.SelectedValue);
+                r.RAP_BILAN = txtBilan.Text;
+
+                if(String.IsNullOrEmpty(txtMed1.Text))
+                {
+                    r.RAP_MED1 = null;
                 }
                 else
                 {
-                    Manager.MajRapport(r);
+                    r.RAP_MED1 = txtMed1.Text;
+                }
+                if (String.IsNullOrEmpty(txtMed2.Text))
+                {
+                    r.RAP_MED2 = null;
+                }
+                else
+                {
+                    r.RAP_MED2 = txtMed2.Text;
                 }
 
-                MessageBox.Show("Rapport de visite n° " + r.RAP_NUM + " enregistré", "Mise à Jour des données", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.DialogResult = System.Windows.Forms.DialogResult.OK;
-                this.Close();
-            }
-            catch (Exception ex)
-            {
+                if (chbDefinitif.Checked)
+                        r.RAP_ETAT = "2";
+                    else
+                        r.RAP_ETAT = "1";
+                    try
+                    {
+                        if (ajout)
+                        {
+                            Manager.CreateRapport(r);
+                            txtNum.Text = r.RAP_NUM.ToString();
+                        }
+                        else
+                        {
+                            Manager.MajRapport(r);
+                        }
 
-                MessageBox.Show("Abandon traitement : " + ex.GetBaseException().Message, "Erreur base de données", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            btnValider.Enabled = true;
+                        MessageBox.Show("Rapport de visite n° " + r.RAP_NUM + " enregistré", "Mise à Jour des données", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Abandon traitement : " + ex.GetBaseException().Message, "Erreur base de données", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    btnValider.Enabled = true;
+                }
+            //}
         }
 
         private void cbxNomPraticien_SelectedIndexChanged(object sender, EventArgs e)
@@ -189,7 +252,7 @@ namespace GSBCR.UI
                 txtMed1.Text = String.Empty;
                 btnVoirMed1.Enabled = false;
             }
-
+                
         }
 
         private void cbxMed2_SelectedIndexChanged(object sender, EventArgs e)
@@ -209,22 +272,17 @@ namespace GSBCR.UI
         private void FrmSaisir_Load(object sender, EventArgs e)
         {
             // Initialisation des contrôles du formulaire avec les valeurs du rapport de visite 
-
+            
         }
 
         private void btnVoirmed1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnVoirMed2_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            
         }
     }
 }
