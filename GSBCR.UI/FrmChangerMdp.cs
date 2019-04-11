@@ -58,13 +58,34 @@ namespace GSBCR.UI
                             }
                             else
                             {
-                                if(!txt_nouveau.Text.Contains(dictionnaire) || !txt_nouveau.Text.Contains(dictionnaireMaj) || !txt_nouveau.Text.Contains(chiffre))
+                                string[]  dico = dictionnaire.Split();
+                                string[] dicoMaj = dictionnaireMaj.Split();
+                                string[] dicochiffre = chiffre.Split();
+
+                                for (int i=0; i<dictionnaire.Length;i++)
+                                {
+                                    if (txt_nouveau.Text.Contains(dico[i]))
+                                    {
+                                        for (int j = 0; j < dictionnaireMaj.Length; j++)
+                                        {
+                                            if (txt_nouveau.Text.Contains(dicoMaj[i]))
+                                            {
+                                                for (int k = 0; k < dicochiffre.Length; k++)
+                                                {
+
+                                                }
+
+                                            }
+                                        }
+
+                                    }
+                                }
+                                if (!txt_nouveau.Text.Contains(dictionnaire) || !txt_nouveau.Text.Contains(dictionnaireMaj) || !txt_nouveau.Text.Contains(chiffre))
                                 {
                                     MessageBox.Show("Le mot de passe n'est pas suffisamment fort : min 6 caractères, une lettre majuscule, une lettre minuscule et un chiffre  ", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
-                            }
 
-                        }
+                            }
 
                     }
 
