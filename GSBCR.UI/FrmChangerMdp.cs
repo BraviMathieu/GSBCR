@@ -62,6 +62,10 @@ namespace GSBCR.UI
                                 {
                                     MessageBox.Show("Le mot de passe n'est pas suffisamment fort : min 6 caractères, une lettre majuscule, une lettre minuscule et un chiffre  ", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
+                                else
+                                {
+                                    Manager.UpdateVisiteurMdp(UserId, txt_ancien.Text, txt_nouveau.Text);
+                                }
                             }
 
                         }

@@ -306,5 +306,14 @@ namespace GSBCR.BLL
                 context.SaveChanges();
             }
         }
+        public static void UpdateVisiteurMdp(string mat, string mdp, string nmdp)
+        {
+            using (var context = new GSB_VisiteEntities())
+            {
+                var req = context.VISITEUR.Where(m => m.VIS_MATRICULE == mat).Where(v => v.vis_mdp == mdp).First();
+                req.vis_mdp = nmdp;
+                context.SaveChanges();
+            }
+        }
     }
 }
