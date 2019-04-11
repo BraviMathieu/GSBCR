@@ -107,14 +107,14 @@ namespace GSBCR.BLL
         }
 
         /// <summary>
-        /// Permet de retourner une liste de visiteurs pour un secteur
+        /// Permet de retourner une liste de visiteurs (pas responsable actuel) pour un secteur
         /// </summary>
         /// <param name="secteurCode">code secteur</param>
         /// <returns>List<VISITEUR></returns>
-        public static List<VISITEUR> ChargerVisiteurBySecteur(string secteurCode)
+        public static List<VISITEUR> ChargerVisiteurBySecteur(string respon, string secteurCode)
         {
             List<VISITEUR> lv = new List<VISITEUR>();
-            lv = VisiteurDAO.FindBySecteur(secteurCode);
+            lv = VisiteurDAO.FindBySecteur(respon,secteurCode);
             return lv;
         }
 
@@ -158,6 +158,24 @@ namespace GSBCR.BLL
             lr = RapportVisiteDAO.FindByEtatEtVisiteur(str, le);
             return lr;
         }
+
+        /// Permet de charger les rapports terminés et consultés (état 3) d'un visiteur
+        /// </summary>
+        /// <param name="r">code région</param>
+        /// /// <param name="code">code visiteur</param>
+        /// <returns>List<RAPPORT_VISITE>/returns>
+        public static List<RAPPORT_VISITE> ChargerRapportRegionLusVisiteur(String r, string code)
+        {
+            //A faire : charger les rapports terminés (état = 3) des visiteurs d'une région
+            List<RAPPORT_VISITE> lr;
+            List<string> codes = new List<String>();
+            List<int> le = new List<int>();
+            le.Add(3);
+            codes.Add(code);
+            lr = RapportVisiteDAO.FindByEtatEtVisiteur(codes, le);
+            return lr;
+        }
+
         /// <summary>
         /// Permet de créer un rapport dans la base de données 
         /// </summary>
@@ -255,5 +273,32 @@ namespace GSBCR.BLL
             return tr;
         }
 
+        /// <summary>
+        /// Permet de mettre à jour le visiteur dans la base de données
+        /// <param name="mat">(matricule visiteur,</param>
+        /// <param name="adr">ancienne adresse visiteur,</param>
+        /// <param name="CP">ancien code postal visiteur,</param>
+        /// <param name="ville">ancienne ville visiteur,</param>
+        /// <param name="nadr">nouvelle adresse visiteur,</param>
+        /// <param name="nCP">nouveau code postal visiteur,</param>
+        /// <param name="nville">nouvelle ville visiteur)</param>
+        /// </summary>
+        public static void UpdateVisiteur(string mat, string adr, string CP, string ville, string nadr, string nCP, string nville)
+        {
+            using (var context = new GSB_VisiteEntities())
+            {
+                var req = context.VISITEUR.Where(m => m.VIS_MATRICULE == mat).Where(a => a.VIS_ADRESSE == adr).First();
+                req.VIS_ADRESSE = nadr;
+                context.SaveChanges();
+
+                req = context.VISITEUR.Where(m => m.VIS_MATRICULE == mat).Where(c => c.VIS_CP == CP).First();
+                req.VIS_CP = nCP;
+                context.SaveChanges();
+
+                req = context.VISITEUR.Where(m => m.VIS_MATRICULE == mat).Where(v => v.VIS_VILLE == ville).First();
+                req.VIS_VILLE = nville;
+                context.SaveChanges();
+            }
+        }
     }
 }

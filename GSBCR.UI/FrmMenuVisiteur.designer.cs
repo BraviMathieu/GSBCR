@@ -158,6 +158,7 @@
             this.btnInfoPers.TabIndex = 13;
             this.btnInfoPers.Text = "Modifier mes infos personnelles";
             this.btnInfoPers.UseVisualStyleBackColor = true;
+            this.btnInfoPers.Click += new System.EventHandler(this.btnInfoPers_Click);
             // 
             // btnConsPra
             // 
@@ -177,6 +178,7 @@
             this.btnConsMed.TabIndex = 15;
             this.btnConsMed.Text = "Consulter un médicament";
             this.btnConsMed.UseVisualStyleBackColor = true;
+            this.btnConsMed.Click += new System.EventHandler(this.btnConsMed_Click);
             // 
             // FrmMenuVisiteur
             // 

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.bsPrac = new System.Windows.Forms.BindingSource(this.components);
             this.ucPraticien1 = new GSBCR.UC.UcPraticien();
+            this.btnRetour = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsPrac)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,11 +43,22 @@
             this.ucPraticien1.Size = new System.Drawing.Size(582, 460);
             this.ucPraticien1.TabIndex = 0;
             // 
+            // btnRetour
+            // 
+            this.btnRetour.Location = new System.Drawing.Point(441, 384);
+            this.btnRetour.Name = "btnRetour";
+            this.btnRetour.Size = new System.Drawing.Size(75, 23);
+            this.btnRetour.TabIndex = 1;
+            this.btnRetour.Text = "Retour";
+            this.btnRetour.UseVisualStyleBackColor = true;
+            this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
+            // 
             // FrmUnPracticien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(547, 431);
+            this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.ucPraticien1);
             this.Name = "FrmUnPracticien";
             this.Text = "frmUnPracticien";
@@ -59,5 +71,6 @@
 
         private UC.UcPraticien ucPraticien1;
         private System.Windows.Forms.BindingSource bsPrac;
+        private System.Windows.Forms.Button btnRetour;
     }
 }

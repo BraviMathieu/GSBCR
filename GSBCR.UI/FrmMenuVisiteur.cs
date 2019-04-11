@@ -97,6 +97,18 @@ namespace GSBCR.UI
             f.ShowDialog();
         }
 
+        private void btnInfoPers_Click(object sender, EventArgs e)
+        {
+            FrmModifierInfo f = new FrmModifierInfo(UserId);
+            f.ShowDialog();
+        }
+
+        private void btnConsMed_Click(object sender, EventArgs e)
+        {
+            FrmConsulterMedicament f = new FrmConsulterMedicament();
+            f.ShowDialog();
+        }
+
         private void btnModifier_Click(object sender, EventArgs e)
         {
             RAPPORT_VISITE r = new RAPPORT_VISITE();

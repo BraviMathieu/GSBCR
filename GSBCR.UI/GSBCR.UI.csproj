@@ -83,11 +83,23 @@
     <Compile Include="FrmConnexion.Designer.cs">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConsulterMedicament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsulterMedicament.Designer.cs">
+      <DependentUpon>FrmConsulterMedicament.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConsulterPraticien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmConsulterPraticien.Designer.cs">
       <DependentUpon>FrmConsulterPraticien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsulterRapportConsulte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsulterRapportConsulte.Designer.cs">
+      <DependentUpon>FrmConsulterRapportConsulte.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDetailRapport.cs">
       <SubType>Form</SubType>
@@ -100,6 +112,12 @@
     </Compile>
     <Compile Include="FrmMenuVisiteur.designer.cs">
       <DependentUpon>FrmMenuVisiteur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModifierInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifierInfo.Designer.cs">
+      <DependentUpon>FrmModifierInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmModifRapport.cs">
       <SubType>Form</SubType>
@@ -145,14 +163,23 @@
     <EmbeddedResource Include="FrmConnexion.resx">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsulterMedicament.resx">
+      <DependentUpon>FrmConsulterMedicament.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmConsulterPraticien.resx">
       <DependentUpon>FrmConsulterPraticien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsulterRapportConsulte.resx">
+      <DependentUpon>FrmConsulterRapportConsulte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDetailRapport.resx">
       <DependentUpon>FrmDetailRapport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMenuVisiteur.resx">
       <DependentUpon>FrmMenuVisiteur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifierInfo.resx">
+      <DependentUpon>FrmModifierInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmModifRapport.resx">
       <DependentUpon>FrmModifRapport.cs</DependentUpon>

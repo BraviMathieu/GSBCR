@@ -34,7 +34,7 @@ namespace GSBCR.DAL
             using (var context = new GSB_VisiteEntities())
             {
                 //context.Configuration.LazyLoadingEnabled = false;
-                var req = from m in context.MEDICAMENT
+                var req = from m in context.MEDICAMENT.Include("laFamille")
                           select m;
                 meds = req.ToList<MEDICAMENT>();
             }
@@ -48,7 +48,7 @@ namespace GSBCR.DAL
             using (var context = new GSB_VisiteEntities())
             {
                 //context.Configuration.LazyLoadingEnabled = false;
-                var req = from m in context.MEDICAMENT.Include("LaFamille")
+                var req = from m in context.MEDICAMENT.Include("laFamille")
                           where m.FAM_CODE == code
                           select m;
                 meds = req.ToList<MEDICAMENT>();
