@@ -107,14 +107,14 @@ namespace GSBCR.BLL
         }
 
         /// <summary>
-        /// Permet de retourner une liste de visiteurs pour un secteur
+        /// Permet de retourner une liste de visiteurs (pas responsable actuel) pour un secteur
         /// </summary>
         /// <param name="secteurCode">code secteur</param>
         /// <returns>List<VISITEUR></returns>
-        public static List<VISITEUR> ChargerVisiteurBySecteur(string secteurCode)
+        public static List<VISITEUR> ChargerVisiteurBySecteur(string respon, string secteurCode)
         {
             List<VISITEUR> lv = new List<VISITEUR>();
-            lv = VisiteurDAO.FindBySecteur(secteurCode);
+            lv = VisiteurDAO.FindBySecteur(respon,secteurCode);
             return lv;
         }
 
@@ -158,6 +158,24 @@ namespace GSBCR.BLL
             lr = RapportVisiteDAO.FindByEtatEtVisiteur(str, le);
             return lr;
         }
+
+        /// Permet de charger les rapports terminés et consultés (état 3) d'un visiteur
+        /// </summary>
+        /// <param name="r">code région</param>
+        /// /// <param name="code">code visiteur</param>
+        /// <returns>List<RAPPORT_VISITE>/returns>
+        public static List<RAPPORT_VISITE> ChargerRapportRegionLusVisiteur(String r, string code)
+        {
+            //A faire : charger les rapports terminés (état = 3) des visiteurs d'une région
+            List<RAPPORT_VISITE> lr;
+            List<string> codes = new List<String>();
+            List<int> le = new List<int>();
+            le.Add(3);
+            codes.Add(code);
+            lr = RapportVisiteDAO.FindByEtatEtVisiteur(codes, le);
+            return lr;
+        }
+
         /// <summary>
         /// Permet de créer un rapport dans la base de données 
         /// </summary>
