@@ -15,10 +15,12 @@ namespace GSBCR.UI
     public partial class FrmConsulterRapportConsulte : Form
     {
         private List<RAPPORT_VISITE> Nbrapports;
-        public FrmConsulterRapportConsulte(List<RAPPORT_VISITE> Nbrapports)
+        private string UserId;
+        public FrmConsulterRapportConsulte(List<RAPPORT_VISITE> Nbrapports, string UserId)
         {
             InitializeComponent();
             this.Nbrapports = Nbrapports;
+            this.UserId = UserId;
             bsRapport.DataSource = Nbrapports;
             cbxRapport.DataSource = bsRapport;
             cbxRapport.DisplayMember = "RAP_NUM";
