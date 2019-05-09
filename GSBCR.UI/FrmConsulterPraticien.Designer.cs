@@ -39,6 +39,7 @@
             this.panelPraticien = new System.Windows.Forms.Panel();
             this.ucPraticien1 = new GSBCR.UC.UcPraticien();
             this.bsPraticien = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.panelPraticien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsPraticien)).BeginInit();
             this.SuspendLayout();
@@ -121,14 +122,25 @@
             this.ucPraticien1.LePraticien = null;
             this.ucPraticien1.Location = new System.Drawing.Point(18, 49);
             this.ucPraticien1.Name = "ucPraticien1";
-            this.ucPraticien1.Size = new System.Drawing.Size(714, 464);
+            this.ucPraticien1.Size = new System.Drawing.Size(714, 437);
             this.ucPraticien1.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(561, 442);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(144, 65);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Quitter";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmConsulterPraticien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 535);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panelPraticien);
             this.Controls.Add(this.btn_voirRapport);
             this.Controls.Add(this.ucPraticien1);
@@ -158,5 +170,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbxLieu;
         private System.Windows.Forms.Panel panelPraticien;
+        private System.Windows.Forms.Button button1;
     }
 }

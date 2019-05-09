@@ -35,6 +35,7 @@ namespace GSBCR.DAL
             {
                 //context.Configuration.LazyLoadingEnabled = false;
                 var req = from m in context.MEDICAMENT.Include("laFamille")
+                          orderby m.MED_NOMCOMMERCIAL
                           select m;
                 meds = req.ToList<MEDICAMENT>();
             }

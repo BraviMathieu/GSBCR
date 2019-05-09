@@ -33,6 +33,7 @@
             this.cbxMedicament = new System.Windows.Forms.ComboBox();
             this.bsMedicament = new System.Windows.Forms.BindingSource(this.components);
             this.btn_voirRapport = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsMedicament)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,9 +65,20 @@
             this.btn_voirRapport.Visible = false;
             this.btn_voirRapport.Click += new System.EventHandler(this.btn_voirRapport_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(658, 596);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 59);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Quitter";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmConsulterMedicament
             // 
             this.ClientSize = new System.Drawing.Size(796, 667);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_voirRapport);
             this.Controls.Add(this.cbxMedicament);
             this.Controls.Add(this.ucMedicament1);
@@ -85,5 +97,6 @@
         private System.Windows.Forms.ComboBox cbxMedicament;
         private System.Windows.Forms.BindingSource bsMedicament;
         private System.Windows.Forms.Button btn_voirRapport;
+        private System.Windows.Forms.Button button1;
     }
 }

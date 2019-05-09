@@ -34,6 +34,7 @@ namespace GSBCR.DAL
             {
                 //context.Configuration.LazyLoadingEnabled = false;
                 var req = from p in context.PRATICIEN
+                          orderby p.PRA_NOM
                           select p;
                 prats = req.ToList<PRATICIEN>();
             }

@@ -58,5 +58,10 @@ namespace GSBCR.UI
             FrmDetailRapport f = new FrmDetailRapport(UserId,unDepot);
             f.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

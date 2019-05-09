@@ -258,15 +258,11 @@ namespace GSBCR.BLL
         /// </summary>
         public static VISITEUR ChargerVisiteurById(string id)
         {
-            VISITEUR vis = null;
-            using (var context = new GSB_VisiteEntities())
-            {
-                var req = from v in context.VISITEUR
-                          where v.VIS_MATRICULE == id
-                          select v;
-                vis = req.SingleOrDefault();
-            }
-            return vis;
+            VISITEUR vis = VisiteurDAO.FindById(id);
+            if (vis != null)
+                return vis;
+            else
+                return null;    
         }
 
         /// <summary>
