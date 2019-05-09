@@ -26,16 +26,23 @@ namespace GSBCR.UI
             VISITEUR vis = null;
             string id = txtId.Text;
             string mdp = txtMdp.Text;
-            vis = Manager.ChargerVisiteur(txtId.Text, txtMdp.Text);
-            if (vis != null)
+            try
             {
-                this.Hide();
-                FrmMenuVisiteur obj = new FrmMenuVisiteur(id, mdp);
-                obj.Show();
+                vis = Manager.ChargerVisiteur(txtId.Text, txtMdp.Text);
+                if (vis != null)
+                {
+                    this.Hide();
+                    FrmMenuVisiteur obj = new FrmMenuVisiteur(id, mdp);
+                    obj.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Le nom d'utilisateur ou le mot de passe est incorrect", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Le nom d'utilisateur ou le mot de passe est incorrect", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Il y'a eu une erreur lors de la connexion", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
