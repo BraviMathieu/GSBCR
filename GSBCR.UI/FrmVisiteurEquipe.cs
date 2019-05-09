@@ -70,5 +70,10 @@ namespace GSBCR.UI
             FrmConsulterRapportConsulte f = new FrmConsulterRapportConsulte(Nbrapports, UserId);
             f.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -32,6 +32,7 @@
             this.ucRapportValide1 = new GSBCR.UC.UcRapportValide();
             this.cbxRapport = new System.Windows.Forms.ComboBox();
             this.bsRapport = new System.Windows.Forms.BindingSource(this.components);
+            this.btnRetour = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapport)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,11 +53,22 @@
             this.cbxRapport.TabIndex = 1;
             this.cbxRapport.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // btnRetour
+            // 
+            this.btnRetour.Location = new System.Drawing.Point(269, 321);
+            this.btnRetour.Name = "btnRetour";
+            this.btnRetour.Size = new System.Drawing.Size(75, 23);
+            this.btnRetour.TabIndex = 36;
+            this.btnRetour.Text = "Retour";
+            this.btnRetour.UseVisualStyleBackColor = true;
+            this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
+            // 
             // FrmConsulterRapportConsulte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 356);
+            this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.cbxRapport);
             this.Controls.Add(this.ucRapportValide1);
             this.Name = "FrmConsulterRapportConsulte";
@@ -71,5 +83,6 @@
         private UC.UcRapportValide ucRapportValide1;
         private System.Windows.Forms.ComboBox cbxRapport;
         private System.Windows.Forms.BindingSource bsRapport;
+        private System.Windows.Forms.Button btnRetour;
     }
 }

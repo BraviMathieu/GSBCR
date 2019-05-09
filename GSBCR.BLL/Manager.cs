@@ -287,29 +287,12 @@ namespace GSBCR.BLL
         /// </summary>
         public static void UpdateVisiteur(string mat, string adr, string CP, string ville, string nadr, string nCP, string nville)
         {
-            using (var context = new GSB_VisiteEntities())
-            {
-                var req = context.VISITEUR.Where(m => m.VIS_MATRICULE == mat).Where(a => a.VIS_ADRESSE == adr).First();
-                req.VIS_ADRESSE = nadr;
-                context.SaveChanges();
-
-                req = context.VISITEUR.Where(m => m.VIS_MATRICULE == mat).Where(c => c.VIS_CP == CP).First();
-                req.VIS_CP = nCP;
-                context.SaveChanges();
-
-                req = context.VISITEUR.Where(m => m.VIS_MATRICULE == mat).Where(v => v.VIS_VILLE == ville).First();
-                req.VIS_VILLE = nville;
-                context.SaveChanges();
-            }
+            VisiteurDAO.UpdateVisiteurInfo(mat, adr, CP, ville, nadr, nCP, nville);
+          
         }
-        public static void UpdateVisiteurMdp(string mat, string mdp, string nmdp)
+        public static void UpdateVisiteurMdp(string mat, string nmdp)
         {
-            using (var context = new GSB_VisiteEntities())
-            {
-                var req = context.VISITEUR.Where(m => m.VIS_MATRICULE == mat).Where(v => v.vis_mdp == mdp).First();
-                req.vis_mdp = nmdp;
-                context.SaveChanges();
-            }
+                VisiteurDAO.UpdateVisiteurMdp(mat, nmdp);
         }
     }
 }

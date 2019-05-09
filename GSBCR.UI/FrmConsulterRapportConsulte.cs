@@ -28,7 +28,19 @@ namespace GSBCR.UI
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cbxRapport.SelectedIndex != -1)
+            {
+                RAPPORT_VISITE r = (RAPPORT_VISITE)cbxRapport.SelectedItem;
+                ucRapportValide1.LeRapportVisite = r;
+                ucRapportValide1.Visible = true;
+                List<RAPPORT_VISITE> v;
+              //  v = Manager.ChargerRapportVisiteurFinis(matricule);
+            }
+        }
 
+        private void btnRetour_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

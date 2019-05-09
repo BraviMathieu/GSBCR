@@ -74,7 +74,7 @@ namespace GSBCR.UI
                                                 {
                                                     if (txt_nouveau.Text.Contains(dicochiffre[k]))
                                                     {
-                                                        Manager.UpdateVisiteurMdp(UserId, txt_ancien.Text, txt_nouveau.Text);
+                                                        Manager.UpdateVisiteurMdp(UserId, txt_nouveau.Text);
                                                     }
                                                     else
                                                     {
