@@ -65,8 +65,6 @@ namespace GSBCR.UI
             dtDateVisite.Focus();
             if (maj)
             {
-                btnValider.Enabled = false;
-                btnValider.Visible = false;
                 cbxRapport.Visible = false;
                 lblRapport.Visible = false;
                 lblTitre.Text = "Nouveau rapport";
@@ -131,7 +129,7 @@ namespace GSBCR.UI
         private void btnValider_Click(object sender, EventArgs e)
         {
             bool ajout;
-            if (String.IsNullOrEmpty(txtNum.Text))
+            if (txtNum.Text == "0")
             {
                 ajout = true;
             }
@@ -216,9 +214,16 @@ namespace GSBCR.UI
                          r.RAP_NUM= Convert.ToInt16(txtNum.Text);
                         Manager.MajRapport(r);
                         }
-
+                        if(ajout)
+                    {
+                        MessageBox.Show("Rapport de visite n° " + r.RAP_NUM + " enregistré", "Création d'un rapport", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
                         MessageBox.Show("Rapport de visite n° " + r.RAP_NUM + " enregistré", "Mise à Jour des données", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                    }
+
+                    this.DialogResult = System.Windows.Forms.DialogResult.OK;
                         this.Close();
                     }
                     catch (Exception ex)
