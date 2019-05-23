@@ -70,7 +70,7 @@
             this.btnNouveau.Name = "btnNouveau";
             this.btnNouveau.Size = new System.Drawing.Size(200, 23);
             this.btnNouveau.TabIndex = 2;
-            this.btnNouveau.Text = "Nouveau rapport de visite";
+            this.btnNouveau.Text = "Modifier un rapport de visite";
             this.btnNouveau.UseVisualStyleBackColor = true;
             this.btnNouveau.Click += new System.EventHandler(this.btnNouveau_Click);
             // 
@@ -99,7 +99,7 @@
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(200, 23);
             this.btnModifier.TabIndex = 7;
-            this.btnModifier.Text = "Modifier un rapport de visite";
+            this.btnModifier.Text = "Nouveau rapport de visite";
             this.btnModifier.UseVisualStyleBackColor = true;
             this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 

@@ -69,7 +69,11 @@ namespace GSBCR.UI
                 btnValider.Visible = false;
                 cbxRapport.Visible = false;
                 lblRapport.Visible = false;
-                lblTitre.Text = "Consultation d'un rapport";
+                lblTitre.Text = "Nouveau rapport";
+            }
+            else
+            {
+                lblTitre.Text = "Modification d'un rapport";
             }
 
             lr = Manager.ChargerRapportVisiteurEncours(r.RAP_MATRICULE);
@@ -289,17 +293,22 @@ namespace GSBCR.UI
         private void FrmSaisir_Load(object sender, EventArgs e)
         {
             // Initialisation des contrôles du formulaire avec les valeurs du rapport de visite 
-            
+            cbxRapport.Text = "";
+            txtNum.Text="0";
+
         }
 
         private void btnVoirmed1_Click(object sender, EventArgs e)
         {
-            
+
+            FrmUnMedicamment f = new FrmUnMedicamment(txtMed1.Text);
+            f.ShowDialog();
         }
 
         private void btnVoirMed2_Click(object sender, EventArgs e)
         {
-            
+            FrmUnMedicamment f = new FrmUnMedicamment(txtMed2.Text);
+            f.ShowDialog();
         }
 
         private void cbxRapport_SelectedIndexChanged(object sender, EventArgs e)
@@ -310,7 +319,6 @@ namespace GSBCR.UI
             }
             else
                 txtNum.Text = String.Empty;
-
 
         }
 
@@ -359,6 +367,15 @@ namespace GSBCR.UI
                 
             }
            
+        }
+
+        private void btnVoirPatricien_Click(object sender, EventArgs e)
+        {
+            if (txtNumPraticien.Text != "")
+            {
+                FrmUnPracticien f = new FrmUnPracticien(Int16.Parse(txtNumPraticien.Text));
+                f.ShowDialog();
+            }
         }
     }
 }

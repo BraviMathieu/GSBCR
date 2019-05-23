@@ -343,6 +343,7 @@
             this.btnVoirPatricien.TabIndex = 24;
             this.btnVoirPatricien.Text = "voir le praticien";
             this.btnVoirPatricien.UseVisualStyleBackColor = true;
+            this.btnVoirPatricien.Click += new System.EventHandler(this.btnVoirPatricien_Click);
             // 
             // cbxRapport
             // 
