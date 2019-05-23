@@ -114,8 +114,18 @@ namespace GSBCR.BLL
         public static List<VISITEUR> ChargerVisiteurBySecteur(string respon, string secteurCode)
         {
             List<VISITEUR> lv = new List<VISITEUR>();
+            List<VISITEUR> lv2 = new List<VISITEUR>();
+            VAFFECTATION oui = new VAFFECTATION();
             lv = VisiteurDAO.FindBySecteur(respon,secteurCode);
-            return lv;
+            foreach(VISITEUR v in lv)
+            {
+                oui = VaffectationDAO.FindByMatricule(v.VIS_MATRICULE);
+                if(oui.TRA_ROLE == "Visiteur")
+                {
+                    lv2.Add(v);
+                }
+            }
+            return lv2;
         }
 
         /// Permet de charger les rapports non consultés (état 2) des visiteurs d'une région  

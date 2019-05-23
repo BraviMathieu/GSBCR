@@ -26,6 +26,7 @@ namespace GSBCR.DAL
                 //context.Configuration.LazyLoadingEnabled = false;
                 var req = from v in context.VISITEUR
                           where v.VIS_MATRICULE == matricule
+                          orderby v.VIS_NOM
                           select v; 
                 vis = req.SingleOrDefault<VISITEUR>();
             }
@@ -40,6 +41,7 @@ namespace GSBCR.DAL
                 //context.Configuration.LazyLoadingEnabled = false;
                 var req = from v in context.VISITEUR
                           where v.SEC_CODE == secteur && v.VIS_MATRICULE != respon
+                          orderby v.VIS_NOM
                           select v;
                 vis = req.ToList<VISITEUR>();
             }
