@@ -23,9 +23,12 @@ namespace GSBCR.UI
 
         private void btnAccepter_Click(object sender, EventArgs e)
         {
-            string dictionnaire = "abcdefghijklmnopqrstuvwxyz";
-            string dictionnaireMaj = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            string chiffre = "1234567890";
+            bool maj, min, chiffre;
+            maj = false;
+            min = false;
+            chiffre = false;
+            Char[] mdp = txt_nouveau2.Text.ToArray();
+            int i;
             if (txt_ancien.Text.Equals("") || txt_nouveau.Text.Equals("") || txt_nouveau2.Text.Equals(""))
             {
                 MessageBox.Show("Un champ n'est pas renseigné", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -58,44 +61,33 @@ namespace GSBCR.UI
                             }
                             else
                             {
-                                string[] dico = dictionnaire.Split();
-                                string[] dicoMaj = dictionnaireMaj.Split();
-                                string[] dicochiffre = chiffre.Split();
 
-                                for (int i = 0; i < dictionnaire.Length; i++)
+                                for (i = 0; i < mdp.Length; i++)
                                 {
-                                    if (txt_nouveau.Text.Contains(dico[i]))
+                                    if (char.IsUpper(mdp[i]))
                                     {
-                                        for (int j = 0; j < dictionnaireMaj.Length; j++)
-                                        {
-                                            if (txt_nouveau.Text.Contains(dicoMaj[j]))
-                                            {
-                                                for (int k = 0; k < dicochiffre.Length; k++)
-                                                {
-                                                    if (txt_nouveau.Text.Contains(dicochiffre[k]))
-                                                    {
-                                                        Manager.UpdateVisiteurMdp(UserId, txt_nouveau.Text);
-                                                    }
-                                                    else
-                                                    {
-                                                        MessageBox.Show("erreur");
-                                                    }
-
-                                                }
-
-                                            }
-                                            else
-                                            {
-                                                MessageBox.Show("erreur");
-                                            }
-                                        }
-
+                                        maj = true;
                                     }
-                                    else
+                                    if (char.IsLower(mdp[i]))
                                     {
-                                        MessageBox.Show("erreur");
+                                        min = true;
                                     }
+                                    if (char.IsNumber(mdp[i]))
+                                    {
+                                        chiffre = true;
+                                    }
+
                                 }
+                                if (maj == false || min == false || chiffre == false)
+                                {
+                                    MessageBox.Show("Le nouveau mot de passe ne contient pas de majuscule , de chiffre ou de minuscule", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
+                                {
+                                    Manager.UpdateVisiteurMdp(UserId, txt_nouveau.Text);
+                                    MessageBox.Show("votre nouveau mot de passe a été enregistré", "opération réussie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+
                             }
 
                         }
